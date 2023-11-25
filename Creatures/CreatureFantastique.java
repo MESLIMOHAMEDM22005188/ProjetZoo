@@ -29,7 +29,7 @@ public abstract class CreatureFantastique {
 
     protected int indicateurSommeil;
 
-    public CreatureFantastique(String nom, char sexe, double poids1, double v, int i, double poids, double taille, int age) {
+    public CreatureFantastique(String nom, char sexe, double poids11, double poids1, double v, int i, double poids, double taille, int age) {
         this.nom = nom;
         this.sexe = sexe;
         this.poids = poids;
