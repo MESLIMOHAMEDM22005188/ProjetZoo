@@ -1,5 +1,5 @@
-import Creatures.CreatureFantastique;
-import Enclos.Enclos;
+import GestionZoo.Assistant;
+import GestionZoo.Zoo;
 
 import java.util.Scanner;
 
@@ -7,69 +7,35 @@ public class main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Création d'une créature fantastique (exemple : dragon)
-        CreatureFantastique creature = new CreatureFantastique("Dragon", 'M', 150, 5, 10, 10, 500, 20, 50) {
-            @Override
-            public void setIndicateurProprete(int i) {
+        System.out.println("Appuyez sur 's' pour commencer une partie");
+        char choix = scanner.next().charAt(0);
 
+        if (choix == 'S' || choix == 's') {
+            Assistant.afficherLigneSuivante("\nBonjour Bienvenue dans votre ZOO!", scanner);
+            // Ajoutez d'autres messages ici avec Assistant.afficherLigneSuivante() si nécessaire
+
+            System.out.println("\nVeuillez remplir le formulaire :");
+            System.out.print("Entrez votre nom : ");
+            scanner.nextLine(); // consommer la nouvelle ligne après le nextInt()
+            String nom = scanner.nextLine();
+
+            System.out.print("Entrez votre prénom : ");
+            String prenom = scanner.nextLine();
+
+            System.out.print("Entrez votre âge : ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Veuillez entrer un nombre valide pour l'âge.");
+                scanner.next(); // Consommer la mauvaise entrée
             }
+            int age = scanner.nextInt();
+            Zoo zoo = new Zoo(nom, prenom, age);
+            Assistant.afficherMenu(scanner, zoo);
 
-            @Override
-            public void emettreSon() {
-
-            }
-
-            @Override
-            public void soigner() {
-
-            }
-        };
-
-        // Création de l'enclos
-        Enclos enclos = new Enclos();
-        enclos.definirNomEnclos("Enclos des Dragons");
-
-        boolean continuer = true;
-
-        while (continuer) {
-            System.out.println("\nQue souhaitez-vous faire ?");
-            System.out.println("1. Afficher les caractéristiques de la créature");
-            System.out.println("2. Afficher les caractéristiques de l'enclos");
-            System.out.println("3. Ajouter une créature à l'enclos");
-            System.out.println("4. Nourrir les créatures dans l'enclos");
-            System.out.println("5. Quitter");
-
-            System.out.print("Votre choix : ");
-            int choix = scanner.nextInt();
-
-            switch (choix) {
-                case 1:
-                    System.out.println("\nCaractéristiques de la créature :");
-                    System.out.println("Nom : " + creature.getNom());
-                    System.out.println("Sexe : " + creature.getSexe());
-                    System.out.println("Poids : " + creature.getPoids());
-                    // Afficher d'autres caractéristiques si nécessaire
-                    break;
-                case 2:
-                    System.out.println("\nCaractéristiques de l'enclos :");
-                    enclos.afficherCaracteristiques();
-                    break;
-                case 3:
-                    enclos.ajouterCreature();
-                    break;
-                case 4:
-                    enclos.nourrirCreatures();
-                    break;
-                case 5:
-                    continuer = false;
-                    System.out.println("Fin du programme.");
-                    break;
-                default:
-                    System.out.println("Choix invalide.");
-                    break;
-            }
+            System.out.println("\nFélicitations " + nom + "! Vous êtes officiellement propriétaire de ce zoo.");
+            System.out.println("\nVous pouvez maintenant accéder à certaines informations du Zoo :");
+            System.out.println("\nVoir ensemble zoo");
+            System.out.println("\nVoir enclos");
+            System.out.println("\nLocalisation");
         }
-
-        scanner.close();
     }
 }

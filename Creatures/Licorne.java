@@ -12,6 +12,7 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
 
     private List<Licorne> enfants;
     private static List<Licorne> adultes;
+    private static List<Licorne> licornes = new ArrayList<>(); // Champ statique pour stocker toutes les licornes créées
 
     public Licorne(String nomEspece, char sexe, double poids, double taille, int age,
                    int indicateurFaim, int indicateurSommeil, int indicateurSante,
@@ -26,6 +27,30 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
         }
     }
 
+    // Méthode pour créer une licorne avec des caractéristiques par défaut et un sexe aléatoire
+    public static Licorne creerLicorne(String nom, char sexe, double poids, double taille, int age) {
+        double poidsNaissance = 60; // Poids de naissance par défaut
+        double poidsMaximum = 90; // Poids maximum par défaut
+
+        // Si le sexe n'est pas fourni, choisissez-le aléatoirement
+        if (sexe != 'M' && sexe != 'F') {
+            Random rand = new Random();
+            sexe = rand.nextBoolean() ? 'M' : 'F';
+        }
+        Licorne nouvelleLicorne = new Licorne(nom, sexe, poids, taille, age, 0, 0, 0, poidsNaissance, poidsMaximum);
+
+        // Ajoute la nouvelle licorne à la liste des licornes créées
+        licornes.add(nouvelleLicorne);
+
+        return nouvelleLicorne;
+    }
+
+    // Méthode pour récupérer toutes les licornes créées
+    public static List<Licorne> getLicornes() {
+        return licornes;
+    }
+
+    // Méthode de reproduction pour une licorne
     public Licorne seReproduire() {
         if (adultes.contains(this)) {
             Random rand = new Random();
@@ -40,6 +65,7 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
         }
     }
 
+    // Méthode pour mettre bas pour une licorne vivipare
     @Override
     public void canMettreBas() {
         Random rand = new Random();
@@ -58,29 +84,13 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
 
     @Override
     public void emettreSon() {
-        if (indicateurFaim > 50) {
-            System.out.println("La Licorne hennit joyeusement.");
-        } else if (indicateurFaim > 20) {
-            System.out.println("La Licorne hennit calmement.");
-        } else {
-            System.out.println("La Licorne hennit faiblement.");
-        }
-    }
 
+    }
 
     @Override
     public void soigner() {
-        // Implémenter le comportement de soin de la Licorne
+
     }
 
-    @Override
-    public void vieillir() {
-        if (getAge() >= 5) {
-            this.taille = TAILLE_MAXIMUM;
-            this.poids = POIDS_MAXIMUM;
-            if (!adultes.contains(this)) {
-                adultes.add(this);
-            }
-        }
-    }
+    // Autres méthodes de la classe Licorne...
 }
