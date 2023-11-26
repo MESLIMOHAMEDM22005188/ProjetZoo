@@ -58,6 +58,16 @@ public abstract class CreatureFantastique {
         }
     }
 
+    public void updateSanteFromProprete() {
+    }
+
+    public boolean getNomEspece() {
+        return false;
+    }
+
+    public abstract void setIndicateurProprete(int i);
+
+
     public interface Run {
         void canRun();
     }

@@ -52,6 +52,11 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
     }
 
     @Override
+    public void setIndicateurProprete(int i) {
+
+    }
+
+    @Override
     public void emettreSon() {
         if (indicateurFaim > 50) {
             System.out.println("La Licorne hennit joyeusement.");

@@ -52,6 +52,11 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
     }
 
     @Override
+    public void setIndicateurProprete(int i) {
+
+    }
+
+    @Override
     public void emettreSon() {
         // Ajoutez ici la logique pour émettre des sons spécifiques pour un lycanthrope
     }

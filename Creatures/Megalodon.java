@@ -51,6 +51,11 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
     }
 
     @Override
+    public void setIndicateurProprete(int i) {
+
+    }
+
+    @Override
     public void emettreSon() {
 
     }
