@@ -1,4 +1,4 @@
-package Creatures;
+package src.Creatures;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,6 @@
-package Creatures;
+package src.Creatures;
 
+// Interface définissant les actions disponibles pour une créature
 interface ActionsCreature {
     void manger();
     void emettreSon();
@@ -8,16 +9,19 @@ interface ActionsCreature {
     void seReveiller();
     void vieillir();
 }
-
+// Enumérations pour la catégorie d'âge
 enum CategorieAge {
     JEUNE, ADULTE, VIEUX, MORT
 }
-
+// Enumérations des noms des espèces
 enum NomEspece {
     DRAGONS, KRAKENS, LICORNES, LYCANTHROPES, MEGALODONS, NYMPHES, PHENIX, SIRENES
 }
+// Classe abstraite représentant les créatures fantastiques
 
 public abstract class CreatureFantastique {
+    // ... (attributs de la créature)
+
     protected String nom;
     protected char sexe;
     protected double poids;
@@ -29,6 +33,7 @@ public abstract class CreatureFantastique {
 
     protected int indicateurSommeil;
 
+    // Constructeur de la classe CreatureFantastique
     public CreatureFantastique(String nom, char sexe, double poids11, double poids1, double v, int i, double poids, double taille, int age) {
         this.nom = nom;
         this.sexe = sexe;
@@ -44,6 +49,7 @@ public abstract class CreatureFantastique {
     public String getNom() {
         return nom;
     }
+    // Méthodes de la créature pour manger, mettre à jour la santé, etc.
 
     public void manger() {
         boolean isMalade = false;
@@ -68,16 +74,37 @@ public abstract class CreatureFantastique {
     public abstract void setIndicateurProprete(int i);
 
 
+    // Interface pour la capacité de courir
     public interface Run {
-        void canRun();
+        default void canRun(boolean hasLegs) {
+            if (hasLegs) {
+                System.out.println("La créature peut courir !");
+            } else {
+                System.out.println("La créature ne peut pas courir car elle n'a pas de pattes !");
+            }
+        }
     }
 
+    // Interface pour la capacité de nager
     public interface CanSwim {
-        void canSwim();
+        default void canSwim(boolean hasFins) {
+            if (hasFins) {
+                System.out.println("La créature peut nager !");
+            } else {
+                System.out.println("La créature ne peut pas nager car elle n'a pas de nageoires !");
+            }
+        }
     }
 
+    // Interface pour la capacité de voler
     public interface CanFly {
-        void canFly();
+        default void canFly(boolean hasWings) {
+            if (hasWings) {
+                System.out.println("La créature peut voler !");
+            } else {
+                System.out.println("La créature ne peut pas voler car elle n'a pas d'ailes !");
+            }
+        }
     }
 
     public void pandre() {

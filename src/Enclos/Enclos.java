@@ -1,4 +1,6 @@
-package Enclos;
+package src.Enclos;
+
+import src.Creatures.Licorne;
 
 public class Enclos {
     private String nomEnclos;
@@ -16,6 +18,11 @@ public class Enclos {
         this.nombreCreaturesPresentes = 0;
         this.degreProprete = "Propre";
         this.indicateurProprete = 100;
+    }
+
+    // Méthode pour définir le nom de l'enclos
+    public void setNomEnclos(String nomEnclos) {
+        this.nomEnclos = nomEnclos;
     }
 
     // Méthode pour définir le nom de l'enclos
@@ -81,5 +88,13 @@ public class Enclos {
     // Méthode pour obtenir le nombre de créatures présentes
     public int getNombreCreaturesPresentes() {
         return nombreCreaturesPresentes;
+    }
+
+
+    public String getType() {
+        return null;
+    }
+
+    public void ajouterCreature(Licorne creature) {
     }
 }

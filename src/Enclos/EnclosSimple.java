@@ -1,12 +1,14 @@
 
-package Enclos;
-import  Creatures.CreatureFantastique;
+package src.Enclos;
+import  src.Creatures.CreatureFantastique;
 public abstract class EnclosSimple extends  Enclos  {
 
     protected String nom;
     protected CreatureFantastique[] occupants;
     protected int capaciteMax;
     protected int nombreOccupants; // Ajout d'un compteur pour suivre le nombre d'occupants actuels
+
+    protected int nombreOccupantsMax = 024;
     protected String etatProprete; // Ajout de l'état de propreté de l'enclos
 
     public EnclosSimple(String nom, int capaciteMax) {
@@ -50,6 +52,8 @@ public abstract class EnclosSimple extends  Enclos  {
 
     // Getter pour l'état de propreté de l'enclos
     public String getEtatProprete() {
+
+
         return etatProprete;
     }
 }

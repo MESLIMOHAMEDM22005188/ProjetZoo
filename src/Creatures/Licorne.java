@@ -1,4 +1,4 @@
-package Creatures;
+package src.Creatures;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +79,6 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
 
     @Override
     public void setIndicateurProprete(int i) {
-
     }
 
     @Override

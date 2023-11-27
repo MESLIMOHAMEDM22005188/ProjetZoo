@@ -1,4 +1,4 @@
-package GestionZoo;
+package src.GestionZoo;
 
 
 import java.util.Scanner;

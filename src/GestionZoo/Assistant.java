@@ -1,4 +1,6 @@
-package GestionZoo;
+package src.GestionZoo;
+
+import src.Creatures.Licorne;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Creatures;
+package src.Creatures;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +82,7 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
     /*
     public void creatureAquatique() {
         if  (this instanceof Megalodon) {
-            EnclosNageurs enclosNageurs =new EnclosNageurs("Enclos nageur", 10, 30, false, false);
+            EnclosNageurs enclosNageurs =new EnclosNageurs("src.Enclos nageur", 10, 30, false, false);
             EnclosNageurs.ajouterCreature(this);
             System.out.println("Le Licorne ne vole pas et ne nage pas elle doit etre dans un enclos simple");
         } else {
