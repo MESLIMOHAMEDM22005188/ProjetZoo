@@ -1,5 +1,8 @@
 package src.Creatures;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // Interface définissant les actions disponibles pour une créature
 interface ActionsCreature {
     void manger();
@@ -9,6 +12,7 @@ interface ActionsCreature {
     void seReveiller();
     void vieillir();
 }
+
 // Enumérations pour la catégorie d'âge
 enum CategorieAge {
     JEUNE, ADULTE, VIEUX, MORT
@@ -20,6 +24,8 @@ enum NomEspece {
 // Classe abstraite représentant les créatures fantastiques
 
 public abstract class CreatureFantastique {
+    private static CreatureFantastique CreatureFantastique = new ArrayList<>(); // Champ statique pour stocker toutes les licornes créées
+
     // ... (attributs de la créature)
 
     protected String nom;

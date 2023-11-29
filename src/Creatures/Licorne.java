@@ -77,6 +77,10 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
         System.out.println("La licorne a mis bas !");
     }
 
+    /**
+     *
+     * @param i
+     */
     @Override
     public void setIndicateurProprete(int i) {
     }

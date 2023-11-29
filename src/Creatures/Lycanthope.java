@@ -12,6 +12,7 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
 
     private List<Lycanthope> enfants;
     private static List<Lycanthope> adultes;
+    private static List<Lycanthope> licornes = new ArrayList<>(); // Champ statique pour stocker tout les lycanthrope créées
 
     public Lycanthope(String nomEspece, char sexe, double poids, double taille, int age,
                       int indicateurFaim, int indicateurSommeil, int indicateurSante,

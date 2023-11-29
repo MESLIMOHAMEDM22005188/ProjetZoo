@@ -4,6 +4,7 @@ import src.Creatures.Licorne;
 import src.Enclos.Enclos;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Assistant {
@@ -16,6 +17,24 @@ public class Assistant {
         if (!(choix == 'S' || choix == 's')) {
             System.out.println("(Appuyez s pour poursuivre");
         }
+    }
+
+    public static boolean gestionPrenomNom(String nom){
+        return nom.matches("[a-zA-Z]+");
+    }
+    public static boolean verifierAge(int age) {
+        boolean ageValide = false;
+        if (age < 18) {
+            System.out.println("Désolé, revenez quand vous serez majeur.");
+        } else if (age == 89) {
+            System.out.println("Vous êtes trop vieux pour gérer un si grand zoo.");
+        } else if (age > 89) {
+            System.out.println("Vous êtes vraiment très vieux pour gérer un zoo !");
+        } else {
+            ageValide = true;
+            System.out.println("Bienvenue ! Vous avez l'âge requis pour gérer ce zoo.");
+        }
+        return ageValide;
     }
 
     public static void afficherMenu(Scanner scanner, Zoo zoo) {

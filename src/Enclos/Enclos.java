@@ -2,7 +2,12 @@ package src.Enclos;
 
 import src.Creatures.Licorne;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Enclos {
+    public static List<Enclos> enclosList = new ArrayList<>();
+
     private String nomEnclos;
     private double superficie;
     private int capaciteMax;
