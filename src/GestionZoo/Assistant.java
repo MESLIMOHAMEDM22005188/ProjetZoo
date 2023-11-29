@@ -1,7 +1,9 @@
 package src.GestionZoo;
 
 import src.Creatures.Licorne;
+import src.Enclos.Enclos;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Assistant {
@@ -12,8 +14,7 @@ public class Assistant {
         char choix = scanner.next().charAt(0);
 
         if (!(choix == 'S' || choix == 's')) {
-            System.out.println("Fin du programme.");
-            System.exit(0);
+            System.out.println("(Appuyez s pour poursuivre");
         }
     }
 

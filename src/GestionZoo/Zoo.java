@@ -25,7 +25,6 @@ public class Zoo {
         System.out.print("Choisissez le champ à modifier (1-Nom, 2-Prénom, 3-Âge) : ");
         int choix = scanner.nextInt();
         scanner.nextLine(); // consommer la nouvelle ligne après le nextInt()
-
         switch (choix) {
             case 1:
                 System.out.print("Entrez le nouveau nom : ");
