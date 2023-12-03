@@ -1,10 +1,5 @@
 package src.GestionZoo;
 
-import src.Creatures.Licorne;
-import src.Enclos.Enclos;
-
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Assistant {
@@ -19,9 +14,10 @@ public class Assistant {
         }
     }
 
-    public static boolean gestionPrenomNom(String nom){
+    public static boolean gestionPrenomNom(String nom) {
         return nom.matches("[a-zA-Z]+");
     }
+
     public static boolean verifierAge(int age) {
         boolean ageValide = false;
         if (age < 18) {
@@ -61,12 +57,30 @@ public class Assistant {
                     break;
                 case 'Q':
                 case 'q':
-                    System.out.println("Fin du programme.");
+                    System.out.println("Vous pouvez maintenant acceder à votre Zoo !!");
+                    System.out.print("Voulez-vous voir le zoo ? (O/N) : ");
+                    char voirZoo = scanner.next().charAt(0);
+
+                    if (voirZoo == 'O' || voirZoo == 'o') {
+                        System.out.print("Confirmez votre choix (s): ");
+                        String nom = null;
+                        Zoo.afficherJeu(nom, scanner, zoo);
+                    } else if (voirZoo == 'N' || voirZoo == 'n') {
+                        System.out.println("Mais... Je comprends que c'est compliqué.");
+                        System.out.println("Mais maintenant le zoo est sous votre responsabilité.");
+                        System.out.println("Venez nous voir quand vous serez prêt !");
+                        return;
+                    } else {
+                        System.out.println("Réponse invalide.");
+                        return;
+                    }
                     break;
                 default:
                     System.out.println("Choix invalide.");
                     break;
             }
         } while (choixMenu != 'Q' && choixMenu != 'q');
+
     }
+
 }
