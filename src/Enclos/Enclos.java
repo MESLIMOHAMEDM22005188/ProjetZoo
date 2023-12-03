@@ -1,12 +1,14 @@
 package src.Enclos;
 
+import src.Creatures.CreatureFantastique;
 import src.Creatures.Licorne;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Enclos {
-    public static List<Enclos> enclosList = new ArrayList<>();
+    public static List<Enclos> EnclosList = new ArrayList<>();
+    public static List<Enclos> SimpleEnclosList = new ArrayList<>();
 
     private String nomEnclos;
     private double superficie;
@@ -30,6 +32,18 @@ public class Enclos {
         this.nomEnclos = nomEnclos;
     }
 
+    public int getCapaciteMax() {
+        return capaciteMax;
+    }
+
+    public void setCapaciteMax(int capaciteMax) {
+        this.capaciteMax = capaciteMax;
+    }
+
+    public void setNombreCreaturesPresentes(int nombreCreaturesPresentes) {
+        this.nombreCreaturesPresentes = nombreCreaturesPresentes;
+    }
+
     // Méthode pour définir le nom de l'enclos
     public void definirNomEnclos(String nomEnclos) {
         this.nomEnclos = nomEnclos;
@@ -45,7 +59,7 @@ public class Enclos {
     }
 
     // Ajouter une créature à l'enclos
-    public void ajouterCreature() {
+    public void ajouterCreature(CreatureFantastique nouvelleCreature) {
         if (nombreCreaturesPresentes < capaciteMax) {
             nombreCreaturesPresentes++;
             System.out.println("Une créature a été ajoutée à l'enclos.");
@@ -79,11 +93,39 @@ public class Enclos {
             System.out.println("L'enclos est sale. Il a besoin d'être nettoyé.");
         }
     }
+    public static Enclos trouverEnclosParNom(String nomEnclos) {
+        for (Enclos enclos : Enclos.EnclosList) {
+            if (enclos.getNom().equalsIgnoreCase(nomEnclos)) {
+                return enclos;
+            }
+        }
+        return null;
+    }
+
+    public double getSuperficie() {
+        return superficie;
+    }
+
+    public void setSuperficie(double superficie) {
+        this.superficie = superficie;
+    }
+
+    public static List<Enclos> getEnclosList() {
+        return EnclosList;
+    }
+
+    public static void setEnclosList(List<Enclos> enclosList) {
+        Enclos.EnclosList = enclosList;
+    }
 
     // Méthode pour définir le degré de propreté de l'enclos
     public void setProprete(String degreProprete) {
         this.degreProprete = degreProprete;
     }
+    public String getProprete() {
+        return degreProprete;
+    }
+
 
     // Méthode pour obtenir le nom de l'enclos
     public String getNom() {
