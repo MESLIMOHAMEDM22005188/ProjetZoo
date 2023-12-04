@@ -231,6 +231,10 @@ public abstract class CreatureFantastique {
          * Méthode définissant la capacité de pandre pour une créature ovipaire.
          */
         void canPandre();
+
+        void emettreSon();
+
+        void soigner();
     }
 
     /**
@@ -241,6 +245,10 @@ public abstract class CreatureFantastique {
          * Méthode définissant la capacité de mettre bas pour une créature vivipaire.
          */
         void canMettreBas();
+
+        void emettreSon();
+
+        void soigner();
     }
     /**
      * Méthode permettant à la créature de s'endormir.

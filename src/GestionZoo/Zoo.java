@@ -73,14 +73,7 @@ public class Zoo {
                     ControleZoo.afficherInformationsZoo();
                     break;
                 case '2':
-                    System.out.println("\nDétails des enclos :");
-                    if (!Enclos.EnclosList.isEmpty()) {
-                        for (Enclos enclos : Enclos.EnclosList) {
-                            enclos.afficherCaracteristiques();
-                        }
-                    } else {
-                        System.out.println("Vous n'avez aucun enclos.");
-                    }
+                    ControleZoo.afficherDetailEnclos();
                     break;
                 case '3':
                     System.out.println("Examiner un enclos :");

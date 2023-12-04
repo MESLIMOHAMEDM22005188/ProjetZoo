@@ -14,24 +14,43 @@ public class Assistant {
         }
     }
 
-    public static boolean gestionPrenomNom(String nom) {
-        return nom.matches("[a-zA-Z]+");
-    }
 
-    public static boolean verifierAge(int age) {
-        boolean ageValide = false;
-        if (age < 18) {
-            System.out.println("Désolé, revenez quand vous serez majeur.");
-        } else if (age == 89) {
-            System.out.println("Vous êtes trop vieux pour gérer un si grand zoo.");
-        } else if (age > 89) {
-            System.out.println("Vous êtes vraiment très vieux pour gérer un zoo !");
-        } else {
-            ageValide = true;
-            System.out.println("Bienvenue ! Vous avez l'âge requis pour gérer ce zoo.");
+        public static boolean estNomValide(String nom) {
+            // Vérification de la longueur du nom
+            if (nom.length() <= 3) {
+                System.out.println("Veuillez entrer un nom de plus de 3 caractères.");
+                return false;
+            }
+
+            // Vérification des caractères spéciaux, chiffres et espaces
+            for (char c : nom.toCharArray()) {
+                if (!Character.isLetter(c)) {
+                    System.out.println("Pas de caractère spécial.");
+                    return false;
+                }
+            }
+
+            // Si toutes les conditions sont remplies, le nom est valide
+            return true;
         }
-        return ageValide;
-    }
+
+        public static boolean estPrenomValide(String prenom) {
+            // Vérification de la longueur du prénom
+            if (prenom.length() <= 3) {
+                return false;
+            }
+
+            // Vérification des caractères spéciaux, chiffres et espaces
+            for (char c : prenom.toCharArray()) {
+                if (!Character.isLetter(c)) {
+                    System.out.println("Pas de caractère spécial.");
+                    return false;
+                }
+            }
+
+            // Si toutes les conditions sont remplies, le prénom est valide
+            return true;
+        }
 
     public static void afficherMenu(Scanner scanner, Zoo zoo) {
         char choixMenu;
@@ -57,30 +76,28 @@ public class Assistant {
                     break;
                 case 'Q':
                 case 'q':
-                    System.out.println("Vous pouvez maintenant acceder à votre Zoo !!");
-                    System.out.print("Voulez-vous voir le zoo ? (O/N) : ");
-                    char voirZoo = scanner.next().charAt(0);
-
-                    if (voirZoo == 'O' || voirZoo == 'o') {
-                        System.out.print("Confirmez votre choix (s): ");
-                        String nom = null;
-                        Zoo.afficherJeu(nom, scanner, zoo);
-                    } else if (voirZoo == 'N' || voirZoo == 'n') {
-                        System.out.println("Mais... Je comprends que c'est compliqué.");
-                        System.out.println("Mais maintenant le zoo est sous votre responsabilité.");
-                        System.out.println("Venez nous voir quand vous serez prêt !");
-                        return;
-                    } else {
-                        System.out.println("Réponse invalide.");
-                        return;
-                    }
+                    System.out.println("Fin du programme.");
                     break;
                 default:
                     System.out.println("Choix invalide.");
                     break;
             }
         } while (choixMenu != 'Q' && choixMenu != 'q');
-
     }
 
+
+    public static boolean verifierAge(int age) {
+        boolean ageValide = false;
+        if (age < 18) {
+            System.out.println("Désolé, revenez quand vous serez majeur.");
+        } else if (age == 89) {
+            System.out.println("Vous êtes trop vieux pour gérer un si grand zoo.");
+        } else if (age > 89) {
+            System.out.println("Vous êtes vraiment très vieux pour gérer un zoo !");
+        } else {
+            ageValide = true;
+            System.out.println("Bienvenue ! Vous avez l'âge requis pour gérer ce zoo.");
+        }
+        return ageValide;
+    }
 }

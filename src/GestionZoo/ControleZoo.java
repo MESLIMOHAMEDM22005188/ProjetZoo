@@ -32,5 +32,30 @@ public class ControleZoo {
         }
 
     }
+    public static boolean verifierAge(int age) {
+        boolean ageValide = false;
+        if (age < 18) {
+            System.out.println("Désolé, revenez quand vous serez majeur.");
+        } else if (age == 89) {
+            System.out.println("Vous êtes trop vieux pour gérer un si grand zoo.");
+        } else if (age > 89) {
+            System.out.println("Vous êtes vraiment très vieux pour gérer un zoo !");
+        } else {
+            ageValide = true;
+            System.out.println("Bienvenue ! Vous avez l'âge requis pour gérer ce zoo.");
+        }
+        return ageValide;
+    }
+    public static void afficherDetailEnclos() {
+        System.out.println("\nDétails des enclos :");
+        if (!Enclos.EnclosList.isEmpty()) {
+            for (Enclos enclos : Enclos.EnclosList) {
+                enclos.afficherCaracteristiques();
+            }
+        } else {
+            System.out.println("Vous n'avez aucun enclos.");
+        }
+
+    }
 
 }

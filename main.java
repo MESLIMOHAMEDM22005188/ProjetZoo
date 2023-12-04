@@ -10,7 +10,7 @@ public class main {
         String nom;
         String prenom;
         int age;
-        Zoo zoo;
+        Zoo zoo = null;
 
         char choix = ' ';
         while (!(choix == 's' || choix == 'S')) {
@@ -28,25 +28,39 @@ public class main {
             Assistant.afficherLigneSuivante("\nAvant de vous donner les clés, vous devez remplir ce formulaire :", scanner);
         }
 
-        System.out.println("\nFormulaire");
-        System.out.print("Entrez votre nom : ");
-        scanner.nextLine(); // consommer la nouvelle ligne après le nextInt()
-        nom = scanner.nextLine();
+        do {
+            System.out.print("Entrez un nom : ");
+            nom = scanner.nextLine();
 
-        System.out.print("Entrez votre prénom : ");
-        prenom = scanner.nextLine();
+            if (!Assistant.estNomValide(nom)) {
+                if (nom.length() <= 3) {
+                    System.out.println("Erreur : Veuillez entrer un nom de plus de 3 caractères.");
+                } else {
+                    System.out.println("Erreur : Pas de caractère spécial dans le nom.");
+                }
+            }
+        } while (!Assistant.estNomValide(nom));
 
+        do {
+            System.out.print("Entrez un prénom : ");
+            prenom = scanner.nextLine();
+
+            if (!Assistant.estPrenomValide(prenom)) {
+                if (prenom.length() <= 3) {
+                    System.out.println("Erreur : Veuillez entrer un prénom de plus de 3 caractères.");
+                } else {
+                    System.out.println("Erreur : Pas de caractère spécial dans le prénom.");
+                }
+            }
+        } while (!Assistant.estPrenomValide(prenom));
         System.out.print("Entrez votre âge : ");
         while (!scanner.hasNextInt()) {
             System.out.println("Veuillez entrer un nombre valide pour l'âge.");
-            scanner.next(); // Consommer la mauvaise entrée
+            scanner.next(
         }
-        age = scanner.nextInt();
-
-        zoo = new Zoo(nom, prenom, age);
-
-        Assistant.afficherMenu(scanner, zoo);
-        Zoo.afficherJeu(nom, scanner, zoo);
-
+            Assistant.afficherMenu(scanner, zoo);
+            Zoo.afficherJeu(nom, scanner, zoo);
+        }
     }
-}
+
+
