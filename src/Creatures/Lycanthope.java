@@ -3,7 +3,9 @@ package src.Creatures;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+/**
+ * La classe Lycanthope représente une créature fantastique vivipare.
+ */
 public class Lycanthope extends CreatureFantastique implements CreatureFantastique.Vivipaire {
     private static double POIDS_NAISSANCE = 60;
     private static double POIDS_MAXIMUM = 90;
@@ -12,8 +14,22 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
 
     private List<Lycanthope> enfants;
     private static List<Lycanthope> adultes;
-    private static List<Lycanthope> licornes = new ArrayList<>(); // Champ statique pour stocker tout les lycanthrope créées
-
+    // Champ statique pour stocker tout les lycanthrope créées
+    private static List<Lycanthope> licornes = new ArrayList<>(); 
+/**
+     * Constructeur pour la classe Lycanthope.
+     *
+     * @param nomEspece        Le nom de l'espèce de lycanthrope.
+     * @param sexe             Le sexe du lycanthrope (M/F).
+     * @param poids            Le poids actuel du lycanthrope.
+     * @param taille           La taille actuelle du lycanthrope.
+     * @param age              L'âge du lycanthrope.
+     * @param indicateurFaim   L'indicateur de faim du lycanthrope.
+     * @param indicateurSommeil L'indicateur de sommeil du lycanthrope.
+     * @param indicateurSante  L'indicateur de santé du lycanthrope.
+     * @param poidsNaissance   Le poids de naissance du lycanthrope.
+     * @param poidsMaximum     Le poids maximum que peut atteindre le lycanthrope.
+     */
     public Lycanthope(String nomEspece, char sexe, double poids, double taille, int age,
                       int indicateurFaim, int indicateurSommeil, int indicateurSante,
                       double poidsNaissance, double poidsMaximum) {
@@ -26,7 +42,10 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
             adultes = new ArrayList<>();
         }
     }
-
+  /**
+     * Méthode de reproduction pour un lycanthrope.
+     * @return Le nouveau lycanthrope issu de la reproduction ou null si le lycanthrope ne peut pas se reproduire.
+     */
     public Lycanthope seReproduire() {
         if (adultes.contains(this)) {
             Random rand = new Random();
@@ -40,7 +59,9 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
             return null;
         }
     }
-
+    /**
+     * Méthode pour mettre bas pour un lycanthrope vivipare.
+     */
     @Override
     public void canMettreBas() {
         Random rand = new Random();
@@ -51,22 +72,31 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
         enfants.add(bebeLycanthrope);
         System.out.println("Le lycanthrope a mis bas !");
     }
-
+     /**
+         * Définition de la méthode abstraite setIndicateurProprete de l'interface CreatureFantastique.
+         * @param i L'indicateur de propreté à définir.
+     */
     @Override
     public void setIndicateurProprete(int i) {
 
     }
-
+     /**
+     * Implémentation de la méthode abstraite emettreSon de l'interface CreatureFantastique.
+     */
     @Override
     public void emettreSon() {
         // Ajoutez ici la logique pour émettre des sons spécifiques pour un lycanthrope
     }
-
+    /**
+         * Implémentation de la méthode abstraite soigner de l'interface CreatureFantastique.
+     */
     @Override
     public void soigner() {
         // Logique pour soigner un lycanthrope
     }
-
+     /**
+     * Méthode spécifique pour gérer le vieillissement d'un lycanthrope.
+     */
     @Override
     public void vieillir() {
         if (getAge() >= 5) {
