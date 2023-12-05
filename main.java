@@ -56,7 +56,7 @@ public class main {
         System.out.print("Entrez votre âge : ");
         while (!scanner.hasNextInt()) {
             System.out.println("Veuillez entrer un nombre valide pour l'âge.");
-            scanner.next(
+            scanner.next();
         }
             Assistant.afficherMenu(scanner, zoo);
             Zoo.afficherJeu(nom, scanner, zoo);
