@@ -18,7 +18,6 @@ public class Assistant {
         public static boolean estNomValide(String nom) {
             // Vérification de la longueur du nom
             if (nom.length() <= 3) {
-                System.out.println("Veuillez entrer un nom de plus de 3 caractères.");
                 return false;
             }
 

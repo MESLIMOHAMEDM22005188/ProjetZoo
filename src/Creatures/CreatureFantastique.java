@@ -150,6 +150,9 @@ public abstract class CreatureFantastique {
         return false;
     }
 
+    // Méthode pour mettre bas pour une licorne vivipare
+    public abstract void canMettreBas();
+
     /**
      * Méthode abstraite à implémenter dans les sous-classes pour définir l'indicateur de propreté.
      * @param i La valeur à utiliser pour définir l'indicateur de propreté.

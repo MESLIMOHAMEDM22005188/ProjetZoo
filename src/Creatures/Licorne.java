@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Licorne extends CreatureFantastique implements CreatureFantastique.Vivipaire {
+public abstract class Licorne extends CreatureFantastique implements CreatureFantastique.Vivipaire {
     private static double POIDS_NAISSANCE = 60;
     private static double POIDS_MAXIMUM = 90;
     private static final double TAILLE_NAISSANCE = 1.70;
@@ -37,7 +37,12 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
             Random rand = new Random();
             sexe = rand.nextBoolean() ? 'M' : 'F';
         }
-        Licorne nouvelleLicorne = new Licorne(nom, sexe, poids, taille, age, 0, 0, 0, poidsNaissance, poidsMaximum);
+        Licorne nouvelleLicorne = new Licorne(nom, sexe, poids, taille, age, 0, 0, 0, poidsNaissance, poidsMaximum) {
+            @Override
+            public void peutMettreBas() {
+
+            }
+        };
 
         // Ajoute la nouvelle licorne à la liste des licornes créées
         licornes.add(nouvelleLicorne);
@@ -56,7 +61,12 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
             Random rand = new Random();
             char sexeEnfant = rand.nextBoolean() ? 'F' : 'M';
             double poidsEnfant = POIDS_NAISSANCE;
-            Licorne bebeLicorne = new Licorne("Bébé Licorne", sexeEnfant, poidsEnfant, 0.5, 0, 0, 0, age, POIDS_NAISSANCE, POIDS_MAXIMUM);
+            Licorne bebeLicorne = new Licorne("Bébé Licorne", sexeEnfant, poidsEnfant, 0.5, 0, 0, 0, age, POIDS_NAISSANCE, POIDS_MAXIMUM) {
+                @Override
+                public void peutMettreBas() {
+
+                }
+            };
             enfants.add(bebeLicorne);
             return bebeLicorne;
         } else {
@@ -72,7 +82,12 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
         char sexeEnfant = rand.nextBoolean() ? 'F' : 'M';
         double poidsEnfant = POIDS_NAISSANCE;
 
-        Licorne bebeLicorne = new Licorne("Bébé Licorne", sexeEnfant, poidsEnfant, 0.5, 0, 0, 0, getAge(), POIDS_NAISSANCE, POIDS_MAXIMUM);
+        Licorne bebeLicorne = new Licorne("Bébé Licorne", sexeEnfant, poidsEnfant, 0.5, 0, 0, 0, getAge(), POIDS_NAISSANCE, POIDS_MAXIMUM) {
+            @Override
+            public void peutMettreBas() {
+
+            }
+        };
         enfants.add(bebeLicorne);
         System.out.println("La licorne a mis bas !");
     }

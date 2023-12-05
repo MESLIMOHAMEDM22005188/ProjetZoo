@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Sirène extends CreatureFantastique implements CreatureFantastique.Vivipaire {
+public abstract class Sirène extends CreatureFantastique implements CreatureFantastique.Vivipaire {
     private static double POIDS_NAISSANCE = 50;
     private static double POIDS_MAXIMUM = 80;
     private static final double TAILLE_NAISSANCE = 1.50;
@@ -36,7 +36,12 @@ public class Sirène extends CreatureFantastique implements CreatureFantastique.
             Random rand = new Random();
             sexe = rand.nextBoolean() ? 'M' : 'F';
         }
-        Sirène nouvelleSirène = new Sirène(nom, sexe, poids, taille, age, 0, 0, 0, poidsNaissance, poidsMaximum);
+        Sirène nouvelleSirène = new Sirène(nom, sexe, poids, taille, age, 0, 0, 0, poidsNaissance, poidsMaximum) {
+            @Override
+            public void peutMettreBas() {
+
+            }
+        };
 
         // Ajoute la nouvelle sirène à la liste des sirènes créées
         sirènes.add(nouvelleSirène);
@@ -53,7 +58,12 @@ public class Sirène extends CreatureFantastique implements CreatureFantastique.
             Random rand = new Random();
             char sexeEnfant = rand.nextBoolean() ? 'F' : 'M';
             double poidsEnfant = POIDS_NAISSANCE;
-            Sirène bebeSirène = new Sirène("Bébé Sirène", sexeEnfant, poidsEnfant, 0.3, 0, 0, 0, getAge(), POIDS_NAISSANCE, POIDS_MAXIMUM);
+            Sirène bebeSirène = new Sirène("Bébé Sirène", sexeEnfant, poidsEnfant, 0.3, 0, 0, 0, getAge(), POIDS_NAISSANCE, POIDS_MAXIMUM) {
+                @Override
+                public void peutMettreBas() {
+
+                }
+            };
             enfants.add(bebeSirène);
             return bebeSirène;
         } else {
@@ -68,7 +78,12 @@ public class Sirène extends CreatureFantastique implements CreatureFantastique.
         char sexeEnfant = rand.nextBoolean() ? 'F' : 'M';
         double poidsEnfant = POIDS_NAISSANCE;
 
-        Sirène bebeSirène = new Sirène("Bébé Sirène", sexeEnfant, poidsEnfant, 0.3, 0, 0, 0, getAge(), POIDS_NAISSANCE, POIDS_MAXIMUM);
+        Sirène bebeSirène = new Sirène("Bébé Sirène", sexeEnfant, poidsEnfant, 0.3, 0, 0, 0, getAge(), POIDS_NAISSANCE, POIDS_MAXIMUM) {
+            @Override
+            public void peutMettreBas() {
+
+            }
+        };
         enfants.add(bebeSirène);
         System.out.println("La sirène a mis bas !");
     }

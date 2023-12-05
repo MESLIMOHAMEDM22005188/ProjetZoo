@@ -80,7 +80,13 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
     public void setIndicateurProprete(int i) {
 
     }
-     /**
+
+    @Override
+    public void peutMettreBas() {
+
+    }
+
+    /**
      * Implémentation de la méthode abstraite emettreSon de l'interface CreatureFantastique.
      */
     @Override
