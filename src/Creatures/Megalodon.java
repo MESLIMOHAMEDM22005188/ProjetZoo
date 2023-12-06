@@ -72,7 +72,12 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
         enfants.add(bebeMegalodon);
         System.out.println("Le Mégalodon a pondu des œufs !");
     }
-    
+
+    @Override
+    public void canMettreBas() {
+
+    }
+
     /**
      * Définition de la méthode abstraite setIndicateurProprete de l'interface CreatureFantastique.
      * @param i L'indicateur de propreté à définir.

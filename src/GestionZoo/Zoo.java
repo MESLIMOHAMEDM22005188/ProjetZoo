@@ -115,6 +115,7 @@ public class Zoo {
 
                         System.out.println("Entrez le numéro de l'enclos dont vous voulez nourrir les créatures :");
                         int choixEnclos = scanner.nextInt(); // Demander à l'utilisateur de choisir l'enclos
+//
 
                         if (choixEnclos > 0 && choixEnclos <= Enclos.EnclosList.size()) {
                             Enclos enclosANourrir = Enclos.EnclosList.get(choixEnclos - 1);

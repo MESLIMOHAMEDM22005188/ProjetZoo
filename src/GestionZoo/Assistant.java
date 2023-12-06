@@ -10,7 +10,7 @@ public class Assistant {
         char choix = scanner.next().charAt(0);
 
         if (!(choix == 'S' || choix == 's')) {
-            System.out.println("(Appuyez s pour poursuivre");
+            System.out.println("(Appuyez sur s pour poursuivre");
         }
     }
 

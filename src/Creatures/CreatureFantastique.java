@@ -151,6 +151,9 @@ public abstract class CreatureFantastique {
         return false;
     }
 
+    // Méthode pour mettre bas pour une licorne vivipare
+    public abstract void canMettreBas();
+
     /**
      * Méthode abstraite à implémenter dans les sous-classes pour définir l'indicateur de propreté.
      * @param i La valeur à utiliser pour définir l'indicateur de propreté.
@@ -163,14 +166,14 @@ public abstract class CreatureFantastique {
 
 
     /**
-     * Interface pour la capacité de courir.
+     * Interface pour la capacité de courrir.
      */
-    public interface Run {
-        default void canRun(boolean hasLegs) {
-            if (hasLegs) {
-                System.out.println("La créature peut courir !");
+    public interface PeutCourrir {
+        default void peutCourrir(boolean possedeJambes) {
+            if (possedeJambes) {
+                System.out.println("La créature peut courrir !");
             } else {
-                System.out.println("La créature ne peut pas courir car elle n'a pas de pattes !");
+                System.out.println("La créature ne peut pas courrir car elle n'a pas de pattes !");
             }
         }
     }
@@ -178,9 +181,9 @@ public abstract class CreatureFantastique {
     /**
      * Interface pour la capacité de nager.
      */
-    public interface CanSwim {
-        default void canSwim(boolean hasFins) {
-            if (hasFins) {
+    public interface PeutNager {
+        default void peutNager(boolean possedeNageoires) {
+            if (possedeNageoires) {
                 System.out.println("La créature peut nager !");
             } else {
                 System.out.println("La créature ne peut pas nager car elle n'a pas de nageoires !");
@@ -191,9 +194,9 @@ public abstract class CreatureFantastique {
     /**
      * Interface pour la capacité de voler.
      */
-    public interface CanFly {
-        default void canFly(boolean hasWings) {
-            if (hasWings) {
+    public interface PeutVoler {
+        default void peutVoler(boolean possedeAiles) {
+            if (possedeAiles) {
                 System.out.println("La créature peut voler !");
             } else {
                 System.out.println("La créature ne peut pas voler car elle n'a pas d'ailes !");
@@ -209,7 +212,7 @@ public abstract class CreatureFantastique {
     public void pandre() {
         if (this instanceof Vivipaire && sexe == 'F') {
             Vivipaire creatureVivipaire = (Vivipaire) this;
-            creatureVivipaire.canMettreBas();
+            creatureVivipaire.peutMettreBas();
         } else {
             System.out.println("Cette créature ne peut pas pandre !");
         }
@@ -222,7 +225,7 @@ public abstract class CreatureFantastique {
     public void mettreBas() {
         if (this instanceof Vivipaire && sexe == 'F') {
             Vivipaire creatureVivipaire = (Vivipaire) this;
-            creatureVivipaire.canMettreBas();
+            creatureVivipaire.peutMettreBas();
         } else {
             System.out.println("Cette créature ne peut pas mettre bas !");
         }
@@ -249,7 +252,7 @@ public abstract class CreatureFantastique {
         /**
          * Méthode définissant la capacité de mettre bas pour une créature vivipaire.
          */
-        void canMettreBas();
+        void peutMettreBas();
 
         void emettreSon();
 
