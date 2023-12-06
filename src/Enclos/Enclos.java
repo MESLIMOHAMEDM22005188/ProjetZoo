@@ -59,13 +59,14 @@ public class Enclos {
     }
 
     // Ajouter une créature à l'enclos
-    public void ajouterCreature(CreatureFantastique nouvelleCreature) {
+    public boolean ajouterCreature(CreatureFantastique nouvelleCreature) {
         if (nombreCreaturesPresentes < capaciteMax) {
             nombreCreaturesPresentes++;
             System.out.println("Une créature a été ajoutée à l'enclos.");
         } else {
             System.out.println("L'enclos est plein. Impossible d'ajouter une nouvelle créature.");
         }
+        return false;
     }
 
     // Enlever une créature de l'enclos
@@ -80,6 +81,7 @@ public class Enclos {
 
     // Nourrir les créatures
     public void nourrirCreatures() {
+
         System.out.println("Les créatures de l'enclos ont été nourries.");
     }
 
@@ -143,5 +145,19 @@ public class Enclos {
     }
 
     public void ajouterCreature(Licorne creature) {
+    }
+
+    public List<String> getEspecesPresentes() {
+        return null;
+    }
+
+    public void nourrirCreatureParEspece(String especeNourrie) {
+    }
+
+    public CreatureFantastique getCreatureParNom(String nomCreature) {
+        return null;
+    }
+
+    public void enleverCreature(CreatureFantastique creatureATransferer) {
     }
 }

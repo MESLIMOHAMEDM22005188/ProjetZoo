@@ -1,5 +1,4 @@
 import src.GestionZoo.Assistant;
-import src.GestionZoo.ControleZoo;
 import src.GestionZoo.Validateur;
 import src.GestionZoo.Zoo;
 
@@ -36,35 +35,9 @@ public class main {
 
                 age = Validateur.saisirAge(scanner);
                 Assistant.afficherMenu(scanner, zoo);
-                Zoo.afficherJeu(nom, age, scanner, zoo);
+                Zoo.afficherJeu(nom, age, zoo);
 
             }
         } while (!(choix == 's' || choix == 'S'));
-    }
-    public static void afficherMenuPrincipal(String nom, int age, Scanner scanner, Zoo zoo) {
-        char choix = ' ';
-        do {
-            System.out.println("\nFélicitations " + nom + "! Vous êtes officiellement propriétaire de ce zoo.");
-            // Afficher les options du menu principal
-            System.out.println("1. Voir ensemble du zoo");
-            System.out.println("2. Voir les enclos");
-            // ... (autres options)
-
-            System.out.print("\nChoisissez une option : ");
-            int option = scanner.nextInt();
-
-            switch (option) {
-                case 1:
-                    choix = ControleZoo.afficherInformationsZoo(nom, age, scanner);
-                    break;
-                case 2:
-                    ControleZoo.afficherDetailEnclos(scanner, choix);
-                    break;
-                // ... (autres cas pour les différentes options du menu)
-                default:
-                    System.out.println("Option invalide.");
-                    break;
-            }
-        } while (choix == 'o' || choix == 'O');
     }
 }

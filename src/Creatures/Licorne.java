@@ -113,6 +113,11 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
         // Implémentation de la méthode pour définir l'indicateur de propreté pour une Licorne.
     }
 
+    @Override
+    public void peutMettreBas() {
+
+    }
+
     /**
      * Méthode pour faire émettre un son à la Licorne en fonction de son état.
      * Si la Licorne a faim, est fatiguée, ou se sent malade, elle émet un hennissement en conséquence.

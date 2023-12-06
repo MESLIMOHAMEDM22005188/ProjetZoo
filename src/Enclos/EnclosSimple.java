@@ -40,7 +40,7 @@ public abstract class EnclosSimple extends  Enclos  {
         }
     }
 
-    public void ajouterCreature(CreatureFantastique creature) {
+    public boolean ajouterCreature(CreatureFantastique creature) {
         if (nombreOccupants < capaciteMax) { // Vérifier si l'enclos n'est pas plein
             occupants[nombreOccupants] = creature;
             nombreOccupants++;
@@ -48,6 +48,7 @@ public abstract class EnclosSimple extends  Enclos  {
         } else {
             System.out.println("L'enclos " + nom + " est plein, impossible d'ajouter " + creature.getNomEspece() + ".");
         }
+        return false;
     }
 
     // Getter pour l'état de propreté de l'enclos

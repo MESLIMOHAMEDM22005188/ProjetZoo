@@ -6,13 +6,13 @@ import src.Enclos.Enclos;
 
 import java.util.Scanner;
 
-import static src.Enclos.Enclos.trouverEnclosParNom;
+import static src.GestionZoo.ControleZoo.choix;
 
 public class Zoo {
     private static String nom;
     private static int age;
     private String prenom;
-
+    private static Zoo zoo;
     public Zoo(String nom, String prenom, int age) {
         this.nom = nom;
         this.prenom = prenom;
@@ -34,122 +34,34 @@ public class Zoo {
 
         Scanner scanner = null;
         Zoo zoo = null;
-        afficherJeu(nom, age, scanner, zoo);
+        afficherJeu(nom, age, zoo);
     }
-
-    public static void choix (){
-    }
-        public static void afficherJeu(String nom, int age, Scanner scanner, Zoo zoo) {
-            scanner = new Scanner(System.in);
-            zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
-            nom = zoo.getNom();
-            age = zoo.age;
-            char choix = scanner.next().charAt(0);
+    public static void afficherJeu(String nom, int age, Zoo zoo) {
+        Scanner scanner = new Scanner(System.in);
+            Zoo.zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
+            Zoo.nom = Zoo.zoo.getNom();
+            Zoo.age = Zoo.zoo.age;
             int option = scanner.nextInt();
-
             switch (option) {
                 case 1:
-                    ControleZoo.afficherInformationsZoo( nom, age, scanner); // Appel corrigé avec les arguments nécessaires
+                    ControleZoo.afficherInformationsZoo(Zoo.nom, Zoo.age, scanner); // Appel corrigé avec les arguments nécessaires
                     break;
                 case 2:
-                    ControleZoo.afficherDetailEnclos(scanner, choix); // Appel corrigé avec les arguments nécessaires
+                    ControleZoo.afficherDetailEnclos(scanner); // Appel corrigé avec les arguments nécessaires
                     break;
                 case 3:
-                    System.out.println("Examiner un enclos :");
-                    if (!Enclos.EnclosList.isEmpty()) {
-                        System.out.println("Liste des enclos disponibles :");
-                        for (Enclos enclos : Enclos.EnclosList) {
-                            System.out.println("- " + enclos.getNom());
-                        }
-
-                        System.out.println("Entrez le nom de l'enclos que vous souhaitez examiner :");
-                        String nomEnclos = scanner.nextLine(); // Demander à l'utilisateur de saisir le nom de l'enclos
-
-                        Enclos enclosExamine = trouverEnclosParNom(nomEnclos);
-
-                        if (enclosExamine != null) {
-                            enclosExamine.afficherCaracteristiques();
-                            // Vous pouvez ajouter d'autres actions pour examiner cet enclos, selon vos besoins.
-                        } else {
-                            System.out.println("L'enclos avec le nom spécifié n'existe pas.");
-                        }
-                    } else {
-                        System.out.println("Aucun enclos n'est disponible.");
-                    }
+                    ControleZoo.ExaminerEnclos(scanner, choix);
                     break;
 
                 case 4:
-                    System.out.println("Nettoyer un enclos :");
-                    if (!Enclos.EnclosList.isEmpty()) {
-                        System.out.println("Liste des enclos disponibles :");
-                        for (int i = 0; i < Enclos.EnclosList.size(); i++) {
-                            System.out.println((i + 1) + ". " + Enclos.EnclosList.get(i).getNom());
-                        }
-
-                        System.out.println("Entrez le numéro de l'enclos que vous souhaitez nettoyer :");
-                        int choixEnclos = scanner.nextInt(); // Demander à l'utilisateur de choisir l'enclos
-
-                        if (choixEnclos > 0 && choixEnclos <= Enclos.EnclosList.size()) {
-                            Enclos enclosANettoyer = Enclos.EnclosList.get(choixEnclos - 1);
-
-                            if (enclosANettoyer.getProprete().equalsIgnoreCase("Propre")) {
-                                System.out.println("L'enclos " + enclosANettoyer.getNom() + " est déjà propre.");
-                            } else {
-                                enclosANettoyer.setProprete("Propre");
-                                System.out.println("L'enclos " + enclosANettoyer.getNom() + " a été nettoyé.");
-                            }
-                        } else {
-                            System.out.println("Numéro d'enclos invalide.");
-                        }
-                    } else {
-                        System.out.println("Aucun enclos n'est disponible.");
-                    }
+                    ControleZoo.NettoyerEnclos(scanner);
                     break;
+
                 case 5:
-                    System.out.println("Nourrir les créatures :");
-                    if (!Enclos.EnclosList.isEmpty()) {
-                        System.out.println("Liste des enclos disponibles :");
-                        for (int i = 0; i < Enclos.EnclosList.size(); i++) {
-                            System.out.println((i + 1) + ". " + Enclos.EnclosList.get(i).getNom());
-                        }
-
-                        System.out.println("Entrez le numéro de l'enclos dont vous voulez nourrir les créatures :");
-                        int choixEnclos = scanner.nextInt(); // Demander à l'utilisateur de choisir l'enclos
-//
-
-                        if (choixEnclos > 0 && choixEnclos <= Enclos.EnclosList.size()) {
-                            Enclos enclosANourrir = Enclos.EnclosList.get(choixEnclos - 1);
-                            enclosANourrir.nourrirCreatures();
-                            System.out.println("Les créatures de l'enclos " + enclosANourrir.getNom() + " ont été nourries.");
-                        } else {
-                            System.out.println("Numéro d'enclos invalide.");
-                        }
-                    } else {
-                        System.out.println("Aucun enclos n'est disponible pour nourrir les créatures.");
-                    }
+                    ControleZoo.NourrirCreature(scanner);
                     break;
-
                 case 6:
-                    System.out.println("Nourrir les créatures :");
-                    if (!Enclos.EnclosList.isEmpty()) {
-                        System.out.println("Liste des enclos disponibles :");
-                        for (int i = 0; i < Enclos.EnclosList.size(); i++) {
-                            System.out.println((i + 1) + ". " + Enclos.EnclosList.get(i).getNom());
-                        }
-
-                        System.out.println("Entrez le numéro de l'enclos dont vous voulez nourrir les créatures :");
-                        int choixEnclos = scanner.nextInt(); // Demander à l'utilisateur de choisir l'enclos
-
-                        if (choixEnclos > 0 && choixEnclos <= Enclos.EnclosList.size()) {
-                            Enclos enclosANourrir = Enclos.EnclosList.get(choixEnclos - 1);
-                            enclosANourrir.nourrirCreatures();
-                            System.out.println("Les créatures de l'enclos " + enclosANourrir.getNom() + " ont été nourries.");
-                        } else {
-                            System.out.println("Numéro d'enclos invalide.");
-                        }
-                    } else {
-                        System.out.println("Aucun enclos n'est disponible pour nourrir les créatures.");
-                    }
+                    ControleZoo.transfererCreature(scanner);
                     break;
 
                 case 7:
