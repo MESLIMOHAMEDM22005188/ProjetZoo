@@ -156,6 +156,10 @@ public abstract class CreatureFantastique {
      */
     public abstract void setIndicateurProprete(int i);
 
+    public abstract void emettreSon();
+
+    public abstract void soigner();
+
 
     /**
      * Interface pour la capacité de courir.

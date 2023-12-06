@@ -9,9 +9,9 @@ import java.util.Scanner;
 import static src.Enclos.Enclos.trouverEnclosParNom;
 
 public class Zoo {
-    private String nom;
+    private static String nom;
+    private static int age;
     private String prenom;
-    private int age;
 
     public Zoo(String nom, String prenom, int age) {
         this.nom = nom;
@@ -19,63 +19,41 @@ public class Zoo {
         this.age = age;
     }
 
+    public static void afficherOption(){
+        System.out.println("Choisissez une option : ");
+        System.out.println("1. Voir ensemble du zoo");
+        System.out.println("2. Voir les enclos");
+        System.out.println("3. Examiner un enclos");
+        System.out.println("4. Nettoyer un enclos");
+        System.out.println("5. Nourrir les créatures");
+        System.out.println("6. Transférer une créature d’un enclos à un autre");
+        System.out.println("7. Créer un enclos");
+        System.out.println("8. Fermer un enclos");
+        System.out.println("9. Acheter une créature");
 
-    public void afficherRecapitulatif() {
-        System.out.println("\nRécapitulatif des informations :");
-        System.out.println("Nom : " + nom);
-        System.out.println("Prénom : " + prenom);
-        System.out.println("Âge : " + age);
+        Scanner scanner = null;
+        Zoo zoo = null;
+        afficherJeu(nom, age, scanner, zoo);
     }
 
-    public void modifierChamp(Scanner scanner) {
-        System.out.print("Choisissez le champ à modifier (1-Nom, 2-Prénom, 3-Âge) : ");
-        int choix = scanner.nextInt();
-        scanner.nextLine(); // consommer la nouvelle ligne après le nextInt()
-        switch (choix) {
-            case 1:
-                System.out.print("Entrez le nouveau nom : ");
-                nom = scanner.nextLine();
-                break;
-            case 2:
-                System.out.print("Entrez le nouveau prénom : ");
-                prenom = scanner.nextLine();
-                break;
-            case 3:
-                System.out.print("Entrez le nouvel âge : ");
-                age = scanner.nextInt();
-                scanner.nextLine(); // consommer la nouvelle ligne après le nextInt()
-                break;
-            default:
-                System.out.println("Choix invalide.");
-                break;
-        }
+    public static void choix (){
     }
-    public static void afficherJeu(String nom, Scanner scanner, Zoo zoo) {
-        char choix = scanner.next().charAt(0);
-
-        do {
-            System.out.println("\nFélicitations " + nom + "! Vous êtes officiellement propriétaire de ce zoo.");
-            System.out.println("\nVous pouvez maintenant accéder à certaines informations du Zoo :");
-            System.out.println("1. Voir ensemble du zoo");
-            System.out.println("2. Voir les enclos");
-            System.out.println("3. Examiner un enclos");
-            System.out.println("4. Nettoyer un enclos");
-            System.out.println("5. Nourrir les créatures");
-            System.out.println("6. Transférer une créature d’un enclos à un autre");
-            System.out.println("7. Créer un enclos");
-            System.out.println("8. Fermer un enclos");
-            System.out.println("9. Acheter une créature");
-            System.out.print("\nChoisissez une option : ");
-
+        public static void afficherJeu(String nom, int age, Scanner scanner, Zoo zoo) {
+            scanner = new Scanner(System.in);
+            zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
+            nom = zoo.getNom();
+            age = zoo.age;
+            char choix = scanner.next().charAt(0);
             int option = scanner.nextInt();
+
             switch (option) {
-                case '1':
-                    ControleZoo.afficherInformationsZoo();
+                case 1:
+                    ControleZoo.afficherInformationsZoo( nom, age, scanner); // Appel corrigé avec les arguments nécessaires
                     break;
-                case '2':
-                    ControleZoo.afficherDetailEnclos();
+                case 2:
+                    ControleZoo.afficherDetailEnclos(scanner, choix); // Appel corrigé avec les arguments nécessaires
                     break;
-                case '3':
+                case 3:
                     System.out.println("Examiner un enclos :");
                     if (!Enclos.EnclosList.isEmpty()) {
                         System.out.println("Liste des enclos disponibles :");
@@ -267,7 +245,47 @@ public class Zoo {
                     System.out.println("Option invalide.");
                     break;
             }
-        } while (choix == 'o' || choix == 'O'); {
+
+            if ((choix == 'o' || choix == 'O')) {
+                afficherOption();
+            }
         }
+
+
+
+        public void afficherRecapitulatif() {
+        System.out.println("\nRécapitulatif des informations :");
+        System.out.println("Nom : " + nom);
+        System.out.println("Prénom : " + prenom);
+        System.out.println("Âge : " + age);
+    }
+
+    public void modifierChamp(Scanner scanner) {
+        System.out.print("Choisissez le champ à modifier (1-Nom, 2-Prénom, 3-Âge) : ");
+        int choix = scanner.nextInt();
+        scanner.nextLine(); // consommer la nouvelle ligne après le nextInt()
+        switch (choix) {
+            case 1:
+                System.out.print("Entrez le nouveau nom : ");
+                nom = scanner.nextLine();
+                break;
+            case 2:
+                System.out.print("Entrez le nouveau prénom : ");
+                prenom = scanner.nextLine();
+                break;
+            case 3:
+                System.out.print("Entrez le nouvel âge : ");
+                age = scanner.nextInt();
+                scanner.nextLine(); // consommer la nouvelle ligne après le nextInt()
+                break;
+            default:
+                System.out.println("Choix invalide.");
+                break;
+        }
+    }
+
+
+    public String getNom() {
+        return nom;
     }
 }

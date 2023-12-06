@@ -3,9 +3,14 @@ package src.GestionZoo;
 import src.Creatures.CreatureFantastique;
 import src.Enclos.Enclos;
 
+import java.util.Scanner;
+
 public class ControleZoo {
-    public static void afficherInformationsZoo() {
-        char choix = ' ';
+    static char choix = ' '; // Déclarer la variable choix comme statique
+
+    public static char afficherInformationsZoo(String nom, int age, Scanner scanner) {
+        Zoo zoo = new Zoo("", "", 0); // Création d'une instance de Zoo
+
         System.out.println("\nInformations sur le zoo :");
         if (!Enclos.EnclosList.isEmpty()) {
             for (Enclos enclos : Enclos.EnclosList) {
@@ -25,37 +30,27 @@ public class ControleZoo {
         } else {
             System.out.println("Aucune créature fantastique n'est présente.");
         }
-        System.out.println("\nRetourner à l'accueil ?");
-        System.out.println("\nVeuillez cliquer sur O");
-        if (!(choix == 'O' || choix == 'o')) {
-            System.out.println("\nVeuillez cliquer sur O");
-        }
 
+        char choixRetour = retourAccueil(scanner);
+
+        return choixRetour;
     }
-    public static boolean verifierAge(int age) {
-        boolean ageValide = false;
-        if (age < 18) {
-            System.out.println("Désolé, revenez quand vous serez majeur.");
-        } else if (age == 89) {
-            System.out.println("Vous êtes trop vieux pour gérer un si grand zoo.");
-        } else if (age > 89) {
-            System.out.println("Vous êtes vraiment très vieux pour gérer un zoo !");
-        } else {
-            ageValide = true;
-            System.out.println("Bienvenue ! Vous avez l'âge requis pour gérer ce zoo.");
-        }
-        return ageValide;
-    }
-    public static void afficherDetailEnclos() {
+
+    public static void afficherDetailEnclos(Scanner scanner, char choix) { // Ajout de l'argument choix
         System.out.println("\nDétails des enclos :");
-        if (!Enclos.EnclosList.isEmpty()) {
-            for (Enclos enclos : Enclos.EnclosList) {
-                enclos.afficherCaracteristiques();
-            }
-        } else {
-            System.out.println("Vous n'avez aucun enclos.");
-        }
 
+    }
+    public static void ExaminerEnclos(Scanner scanner, char choix){
+
+    }
+    public static char retourAccueil(Scanner scanner) {
+        System.out.println("\nRetourner à l'accueil ? (Appuyez sur 'o' pour oui) : ");
+        char choix = scanner.next().charAt(0);
+        scanner.nextLine(); // Consommer la nouvelle ligne
+
+        char choixRetour = retourAccueil(scanner);
+
+        return choixRetour;
     }
 
 }

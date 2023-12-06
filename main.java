@@ -1,66 +1,70 @@
 import src.GestionZoo.Assistant;
+import src.GestionZoo.ControleZoo;
+import src.GestionZoo.Validateur;
 import src.GestionZoo.Zoo;
 
 import java.util.Scanner;
 
 public class main {
 
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String nom;
         String prenom;
-        int age;
+        int age = 0;
         Zoo zoo = null;
 
         char choix = ' ';
-        while (!(choix == 's' || choix == 'S')) {
+        do {
             System.out.print("Appuyez sur 's' pour commencer une partie : ");
             choix = scanner.next().charAt(0);
 
             if (!(choix == 's' || choix == 'S')) {
                 System.out.println("Veuillez appuyer sur 's' pour continuer.");
+            } else {
+                Assistant.afficherLigneSuivante("\nBonjour ! Bienvenue dans votre ZOO !", scanner);
+                Assistant.afficherLigneSuivante("\nJ'ai appris pour vos parents... ", scanner);
+                Assistant.afficherLigneSuivante("\nToutes mes condoléances...  ", scanner);
+                Assistant.afficherLigneSuivante("\nJe les connaissais, ils avaient beaucoup d'espoir en votre avenir.", scanner);
+                Assistant.afficherLigneSuivante("\nVous héritez maintenant du plus grand zoo au monde construit par vos parents.", scanner);
+                Assistant.afficherLigneSuivante("\nAvant de vous donner les clés, vous devez remplir ce formulaire :", scanner);
+
+                nom = Validateur.saisirInfoValide("Entrez votre nom: ", "Erreur : Veuillez entrer un nom valable", "Erreur : Pas de caractère spécial dans le nom.", scanner, Assistant.estNomValide());
+
+                prenom = Validateur.saisirInfoValide("Entrez un prénom :  ", "Erreur : Veuillez entrer un prénom de plus de 3 caractères.", "Erreur : Pas de caractère spécial dans le prénom.", scanner, Assistant.estPrenomValide());
+
+                age = Validateur.saisirAge(scanner);
+                Assistant.afficherMenu(scanner, zoo);
+                Zoo.afficherJeu(nom, age, scanner, zoo);
+
             }
-            Assistant.afficherLigneSuivante("\nBonjour ! Bienvenue dans votre ZOO !", scanner);
-            Assistant.afficherLigneSuivante("\nJ'ai appris pour vos parents... ", scanner);
-            Assistant.afficherLigneSuivante("\nToutes mes condoléances...  ", scanner);
-            Assistant.afficherLigneSuivante("\nJe les connaissaient, ils avaient beaucoup d'espoir en votre avenir.", scanner);
-            Assistant.afficherLigneSuivante("\nVous héritez maintenant du plus grand zoo au monde construit par vos parents.", scanner);
-            Assistant.afficherLigneSuivante("\nAvant de vous donner les clés, vous devez remplir ce formulaire :", scanner);
-        }
-
-        do {
-            System.out.print("Entrez un nom : ");
-            nom = scanner.nextLine();
-
-            if (!Assistant.estNomValide(nom)) {
-                if (nom.length() <= 3) {
-                    System.out.println("Erreur : Veuillez entrer un nom de plus de 3 caractères.");
-                } else {
-                    System.out.println("Erreur : Pas de caractère spécial dans le nom.");
-                }
-            }
-        } while (!Assistant.estNomValide(nom));
-
-        do {
-            System.out.print("Entrez un prénom : ");
-            prenom = scanner.nextLine();
-
-            if (!Assistant.estPrenomValide(prenom)) {
-                if (prenom.length() <= 3) {
-                    System.out.println("Erreur : Veuillez entrer un prénom de plus de 3 caractères.");
-                } else {
-                    System.out.println("Erreur : Pas de caractère spécial dans le prénom.");
-                }
-            }
-        } while (!Assistant.estPrenomValide(prenom));
-        System.out.print("Entrez votre âge : ");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Veuillez entrer un nombre valide pour l'âge.");
-            scanner.next(
-        }
-            Assistant.afficherMenu(scanner, zoo);
-            Zoo.afficherJeu(nom, scanner, zoo);
-        }
+        } while (!(choix == 's' || choix == 'S'));
     }
+    public static void afficherMenuPrincipal(String nom, int age, Scanner scanner, Zoo zoo) {
+        char choix = ' ';
+        do {
+            System.out.println("\nFélicitations " + nom + "! Vous êtes officiellement propriétaire de ce zoo.");
+            // Afficher les options du menu principal
+            System.out.println("1. Voir ensemble du zoo");
+            System.out.println("2. Voir les enclos");
+            // ... (autres options)
 
+            System.out.print("\nChoisissez une option : ");
+            int option = scanner.nextInt();
 
+            switch (option) {
+                case 1:
+                    choix = ControleZoo.afficherInformationsZoo(nom, age, scanner);
+                    break;
+                case 2:
+                    ControleZoo.afficherDetailEnclos(scanner, choix);
+                    break;
+                // ... (autres cas pour les différentes options du menu)
+                default:
+                    System.out.println("Option invalide.");
+                    break;
+            }
+        } while (choix == 'o' || choix == 'O');
+    }
+}

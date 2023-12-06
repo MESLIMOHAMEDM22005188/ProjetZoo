@@ -18,7 +18,6 @@ public class Assistant {
         public static boolean estNomValide(String nom) {
             // Vérification de la longueur du nom
             if (nom.length() <= 3) {
-                System.out.println("Veuillez entrer un nom de plus de 3 caractères.");
                 return false;
             }
 
@@ -62,7 +61,6 @@ public class Assistant {
             System.out.println("M3 - Modifier l'âge");
             System.out.println("Q - Quitter");
 
-            System.out.print("Votre choix : ");
             choixMenu = scanner.next().charAt(0);
 
             switch (choixMenu) {
@@ -76,7 +74,9 @@ public class Assistant {
                     break;
                 case 'Q':
                 case 'q':
-                    System.out.println("Fin du programme.");
+                    System.out.println("Bien j'ai enregistrer vos informations !");
+                    System.out.println("Maintenant vous pouvez acceder au menu principale du Jeu (Q)");
+                    Zoo.afficherOption();
                     break;
                 default:
                     System.out.println("Choix invalide.");
@@ -100,4 +100,24 @@ public class Assistant {
         }
         return ageValide;
     }
+
+        public static Validator estPrenomValide() {
+            return new Validator() {
+                @Override
+                public boolean valider(String input) {
+                    // Ajoutez ici la logique pour valider le prénom
+                    return (input != null && input.matches("[a-zA-Z]+") && input.length() >= 3);
+                }
+            };
+        }
+
+        public static Validator estNomValide() {
+            return new Validator() {
+                @Override
+                public boolean valider(String input) {
+                    // Ajoutez ici la logique pour valider le nom
+                    return (input != null && input.matches("[a-zA-Z]+") && input.length() >= 3);
+                }
+            };
+        }
 }
