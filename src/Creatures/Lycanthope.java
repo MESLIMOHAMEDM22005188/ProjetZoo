@@ -72,21 +72,16 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
         enfants.add(bebeLycanthrope);
         System.out.println("Le lycanthrope a mis bas !");
     }
-     /**
-         * Définition de la méthode abstraite setIndicateurProprete de l'interface CreatureFantastique.
-         * @param i L'indicateur de propreté à définir.
-     */
-    @Override
-    public void setIndicateurProprete(int i) {
-
-    }
 
     /**
      * Définition de la méthode abstraite peutMettreBas de l'interface CreatureFantastique.
+     *
+     * @return
      */
     @Override
-    public void peutMettreBas() {
+    public boolean peutMettreBas() {
 
+        return false;
     }
 
     /**

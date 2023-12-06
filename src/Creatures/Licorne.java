@@ -105,14 +105,6 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
         System.out.println("La licorne a mis bas !");
     }
 
-    /**
-     * Méthode pour définir l'indicateur de propreté pour une Licorne.
-     * @param i La valeur de l'indicateur de propreté à définir.
-     */
-    @Override
-    public void setIndicateurProprete(int i) {
-        // Implémentation de la méthode pour définir l'indicateur de propreté pour une Licorne.
-    }
 
     @Override
     public boolean peutMettreBas() {

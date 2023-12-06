@@ -37,9 +37,12 @@ public abstract class Sirene extends CreatureFantastique implements CreatureFant
             sexe = rand.nextBoolean() ? 'M' : 'F';
         }
         Sirene nouvelleSirene = new Sirene(nom, sexe, poids, taille, age, 0, 0, 0, poidsNaissance, poidsMaximum) {
-            @Override
-            public void peutMettreBas() {
 
+
+            @Override
+            public boolean peutMettreBas() {
+
+                return false;
             }
         };
 
@@ -60,8 +63,9 @@ public abstract class Sirene extends CreatureFantastique implements CreatureFant
             double poidsEnfant = POIDS_NAISSANCE;
             Sirene bebeSirene = new Sirene("Bébé Sirene", sexeEnfant, poidsEnfant, 0.3, 0, 0, 0, getAge(), POIDS_NAISSANCE, POIDS_MAXIMUM) {
                 @Override
-                public void peutMettreBas() {
+                public boolean peutMettreBas() {
 
+                    return false;
                 }
             };
             enfants.add(bebeSirene);
@@ -79,24 +83,46 @@ public abstract class Sirene extends CreatureFantastique implements CreatureFant
         double poidsEnfant = POIDS_NAISSANCE;
 
         Sirene bebeSirène = new Sirene("Bébé Sirène", sexeEnfant, poidsEnfant, 0.3, 0, 0, 0, getAge(), POIDS_NAISSANCE, POIDS_MAXIMUM) {
-            @Override
-            public void peutMettreBas() {
 
+            @Override
+            public boolean peutMettreBas() {
+
+                return false;
             }
         };
         enfants.add(bebeSirène);
         System.out.println("La sirène a mis bas !");
     }
-
-    @Override
-    public void setIndicateurProprete(int i) {
-    }
-
     @Override
     public void emettreSon() {
-    }
+        if (indicateurFaim > 50) {
+            System.out.println("La sirène émet un son de faim !");
+        } else if (indicateurSante < 20) {
+            System.out.println("La sirène émet un son de douleur, sa santé est basse !");
+        } else {
+            System.out.println("La sirène émet un son normal.");
+        } {
 
+        }
+    }
     @Override
     public void soigner() {
+        // Supposons qu'atteindre l'aquarium signifie que la sirène reçoit des soins spéciaux
+
+        // Vérifions si la sirène a une santé basse
+        if (indicateurSante < 20) {
+            System.out.println("Vous atteignez l'aquarium pour soigner la sirène.");
+
+            // Simuler le processus de soin en restaurant la santé
+            indicateurSante += 30; // Par exemple, on augmente la santé de 30 points
+            if (indicateurSante> 100) {
+                indicateurSante = 100; // On s'assure que la santé reste dans les limites (max 100)
+            }
+
+            System.out.println("La sirène a été soignée et sa santé est maintenant à " + indicateurSante + ".");
+        } else {
+            System.out.println("La santé de la sirène n'est pas assez basse pour nécessiter des soins.");
+        }
     }
+
 }

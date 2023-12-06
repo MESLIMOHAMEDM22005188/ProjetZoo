@@ -33,6 +33,8 @@ public abstract class CreatureFantastique {
      */
     public static List<CreatureFantastique> Creature = new ArrayList<>();
 
+
+
     /**
      * Nom de la créature.
      */
@@ -133,31 +135,21 @@ public abstract class CreatureFantastique {
         }
     }
 
-    /**
-     * Met à jour la santé de la créature en fonction de la propreté.
-     * Cette méthode est à implémenter dans les sous-classes pour définir
-     * le comportement spécifique de mise à jour de la santé basée sur la propreté.
-     */
-    public void updateSanteFromProprete() {
-        // À implémenter
 
-    }
     /**
      * Obtient le nom de l'espèce de la créature.
+     *
      * @return false car cette méthode devrait normalement retourner une chaîne de caractères représentant le nom de l'espèce.
      */
-    public boolean getNomEspece() {
-        return false;
+    public String getNomEspece() {
+        Object nomEspece;
+
+
+        return null;
     }
 
     // Méthode pour mettre bas pour une licorne vivipare
     public abstract void canMettreBas();
-
-    /**
-     * Méthode abstraite à implémenter dans les sous-classes pour définir l'indicateur de propreté.
-     * @param i La valeur à utiliser pour définir l'indicateur de propreté.
-     */
-    public abstract void setIndicateurProprete(int i);
 
     public abstract void emettreSon();
 
@@ -244,14 +236,13 @@ public abstract class CreatureFantastique {
         void soigner();
     }
 
-    /**
-     * Interface définissant la capacité de mettre bas pour une créature vivipaire.
-     */
     public interface Vivipaire {
         /**
          * Méthode définissant la capacité de mettre bas pour une créature vivipaire.
+         *
+         * @return
          */
-        void peutMettreBas();
+        boolean peutMettreBas();
 
         void emettreSon();
 

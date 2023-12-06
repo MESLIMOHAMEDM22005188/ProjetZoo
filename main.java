@@ -18,7 +18,6 @@ public class main {
         do {
             System.out.print("Appuyez sur 's' pour commencer une partie : ");
             choix = scanner.next().charAt(0);
-
             if (!(choix == 's' || choix == 'S')) {
                 System.out.println("Veuillez appuyer sur 's' pour continuer.");
             } else {

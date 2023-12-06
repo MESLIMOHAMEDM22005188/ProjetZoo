@@ -9,6 +9,9 @@ import java.util.List;
 public class Enclos {
     public static List<Enclos> EnclosList = new ArrayList<>();
     public static List<Enclos> SimpleEnclosList = new ArrayList<>();
+    public static List<Enclos> EnclosVoltigeur = new ArrayList<>();
+
+    public static List<Enclos> EnclosAquarium = new ArrayList<>();
 
     private String nomEnclos;
     private double superficie;

@@ -80,18 +80,6 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
     public void canMettreBas() {
 
     }
-
-    /**
-     * Définition de la méthode abstraite setIndicateurProprete de l'interface CreatureFantastique.
-     *
-     * @param i L'indicateur de propreté à définir.
-     */
-
-    @Override
-    public void setIndicateurProprete(int i) {
-
-    }
-
     /**
      * Implémentation de la méthode abstraite emettreSon de l'interface CreatureFantastique.
      */

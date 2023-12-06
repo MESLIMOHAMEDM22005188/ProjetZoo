@@ -11,6 +11,7 @@ import java.util.List;
 public class CreatureAquatique {
     /**
      * Liste des espèces nageantes disponibles.
+     * author: @m220052188
      */
     private List<String> especesNageantes;
 

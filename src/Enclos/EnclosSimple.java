@@ -7,10 +7,10 @@ public abstract class EnclosSimple extends  Enclos  {
     protected CreatureFantastique[] occupants;
     protected int capaciteMax;
 
-    protected int nombreOccupants; // Ajout d// 'un compteur pour suivre le nombre d'occupants actuels
+    protected int nombreOccupants;
 
     protected int nombreOccupantsMax = 024;
-    protected String etatProprete; // Ajout de l'état de propreté de l'enclos
+    protected String etatProprete;
 
     public EnclosSimple(String nom, int capaciteMax) {
         super();
@@ -26,26 +26,18 @@ public abstract class EnclosSimple extends  Enclos  {
     public void nettoyerEnclos() {
         for (CreatureFantastique occupant : occupants) {
             if (occupant != null) {
-                occupant.setIndicateurProprete(100); // Remettre l'indicateur de propreté à 100 pour tous les occupants
             }
         }
         this.etatProprete = "Propre"; // Mettre à jour l'état de propreté de l'enclos après le nettoyage
         System.out.println("L'enclos " + nom + " a été nettoyé.");
     }
 
-    public void miseAJourSante() {
-        for (CreatureFantastique occupant : occupants) {
-            if (occupant != null) {
-                occupant.updateSanteFromProprete(); // Mettre à jour la santé des occupants en fonction de la propreté
-            }
-        }
-    }
 
     public boolean ajouterCreature(CreatureFantastique creature) {
         if (nombreOccupants < capaciteMax) { // Vérifier si l'enclos n'est pas plein
             occupants[nombreOccupants] = creature;
             nombreOccupants++;
-            System.out.println(creature.getNomEspece() + " a été ajouté(e) à l'enclos " + nom + ".");
+            System.out.printf("%s a été ajouté(e) à l'enclos %s.%n", creature.getNomEspece(), nom);
         } else {
             System.out.println("L'enclos " + nom + " est plein, impossible d'ajouter " + creature.getNomEspece() + ".");
         }
