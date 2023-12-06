@@ -115,8 +115,12 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
     }
 
     @Override
-    public void peutMettreBas() {
-
+    public boolean peutMettreBas() {
+        boolean mettreBas = false;
+        if(sexe=='F') {
+            mettreBas = true;
+        }
+        return mettreBas;
     }
 
     /**
@@ -139,6 +143,8 @@ public class Licorne extends CreatureFantastique implements CreatureFantastique.
 
     @Override
     public void soigner() {
+        System.out.println("Vous soignez la licorne.");;
+        setIndicateurSante(10);
     }
 
 }
