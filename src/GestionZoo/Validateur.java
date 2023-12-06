@@ -20,6 +20,7 @@ public class Validateur {
             }
         } while (!valide);
         return info;
+
     }
 
     public static int saisirAge(Scanner scanner) {

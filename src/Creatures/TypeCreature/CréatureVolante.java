@@ -1,4 +1,6 @@
-package src.Creatures;
+package src.Creatures.TypeCreature;
+
+import src.Creatures.CreatureFantastique;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +8,7 @@ import java.util.List;
 /**
  * Cette classe gère les espèces volantes dans le contexte des créatures fantastiques.
  */
-public class Vol {
+public class CréatureVolante {
     /**
      * Liste des espèces volantes disponibles.
      */
@@ -16,7 +18,7 @@ public class Vol {
      * Constructeur par défaut de la classe Vol.
      * Initialise la liste des espèces volantes et ajoute des espèces par défaut.
      */
-    public Vol() {
+    public CréatureVolante() {
         especesVolantes = new ArrayList<>();
     }
 

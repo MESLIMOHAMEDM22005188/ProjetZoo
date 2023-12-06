@@ -12,7 +12,6 @@ interface ActionsCreature {
     void emettreSon();
     void soigner();
     void dormir();
-
     void seReveiller();
     void vieillir();
 }

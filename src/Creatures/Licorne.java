@@ -6,6 +6,7 @@ import java.util.Random;
 
 /**
  * La classe Licorne représente une créature fantastique du monde magique.
+ *
  * Elle hérite de la classe CreatureFantastique et implémente l'interface Vivipaire.
  */
 public class Licorne extends CreatureFantastique implements CreatureFantastique.Vivipaire {

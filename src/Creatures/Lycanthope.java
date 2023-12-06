@@ -81,6 +81,9 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
 
     }
 
+    /**
+     * Définition de la méthode abstraite peutMettreBas de l'interface CreatureFantastique.
+     */
     @Override
     public void peutMettreBas() {
 
@@ -91,7 +94,6 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
      */
     @Override
     public void emettreSon() {
-        // Ajoutez ici la logique pour émettre des sons spécifiques pour un lycanthrope
     }
     /**
          * Implémentation de la méthode abstraite soigner de l'interface CreatureFantastique.

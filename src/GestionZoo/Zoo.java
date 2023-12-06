@@ -44,6 +44,7 @@ public class Zoo {
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
+
                     ControleZoo.afficherInformationsZoo(Zoo.nom, Zoo.age, scanner); // Appel corrigé avec les arguments nécessaires
                     break;
                 case 2:

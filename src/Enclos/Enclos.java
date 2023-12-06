@@ -77,9 +77,13 @@ public class Enclos {
         } else {
             System.out.println("L'enclos est vide. Aucune créature à enlever.");
         }
+
     }
 
     // Nourrir les créatures
+
+
+
     public void nourrirCreatures() {
 
         System.out.println("Les créatures de l'enclos ont été nourries.");

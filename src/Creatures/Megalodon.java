@@ -15,19 +15,20 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
 
     private List<Megalodon> enfants;
     private static List<Megalodon> adultes;
-     /**
+
+    /**
      * Constructeur pour la classe Megalodon.
      *
-     * @param nomEspece        Le nom de l'espèce de Mégalodon.
-     * @param sexe             Le sexe du Mégalodon (M/F).
-     * @param poids            Le poids actuel du Mégalodon.
-     * @param taille           La taille actuelle du Mégalodon.
-     * @param age              L'âge du Mégalodon.
-     * @param indicateurFaim   L'indicateur de faim du Mégalodon.
+     * @param nomEspece         Le nom de l'espèce de Mégalodon.
+     * @param sexe              Le sexe du Mégalodon (M/F).
+     * @param poids             Le poids actuel du Mégalodon.
+     * @param taille            La taille actuelle du Mégalodon.
+     * @param age               L'âge du Mégalodon.
+     * @param indicateurFaim    L'indicateur de faim du Mégalodon.
      * @param indicateurSommeil L'indicateur de sommeil du Mégalodon.
-     * @param indicateurSante  L'indicateur de santé du Mégalodon.
-     * @param poidsNaissance   Le poids de naissance du Mégalodon.
-     * @param poidsMaximum     Le poids maximum que peut atteindre le Mégalodon.
+     * @param indicateurSante   L'indicateur de santé du Mégalodon.
+     * @param poidsNaissance    Le poids de naissance du Mégalodon.
+     * @param poidsMaximum      Le poids maximum que peut atteindre le Mégalodon.
      */
 
     public Megalodon(String nomEspece, char sexe, double poids, double taille, int age,
@@ -42,8 +43,10 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
             adultes = new ArrayList<>();
         }
     }
- /**
+
+    /**
      * Méthode de reproduction pour un Mégalodon.
+     *
      * @return Le nouveau Mégalodon issu de la reproduction ou null si le Mégalodon ne peut pas se reproduire.
      */
     public Megalodon seReproduire() {
@@ -80,6 +83,7 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
 
     /**
      * Définition de la méthode abstraite setIndicateurProprete de l'interface CreatureFantastique.
+     *
      * @param i L'indicateur de propreté à définir.
      */
 
@@ -87,13 +91,15 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
     public void setIndicateurProprete(int i) {
 
     }
-     /**
+
+    /**
      * Implémentation de la méthode abstraite emettreSon de l'interface CreatureFantastique.
      */
     @Override
     public void emettreSon() {
 
     }
+
     /**
      * Implémentation de la méthode abstraite soigner de l'interface CreatureFantastique.
      */
@@ -101,7 +107,8 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
     public void soigner() {
 
     }
- /**
+
+    /**
      * Méthode spécifique pour gérer le vieillissement d'un Mégalodon.
      */
     public void vieillir() {
@@ -113,22 +120,15 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
             }
         }
     }
+
     /**
-         * Méthode pour mettre à jour l'état du Mégalodon.
+     * Méthode pour mettre à jour l'état du Mégalodon.
      */
     public void miseAJourEtat() {
         vieillir();
-    }
 
-    /*
-    public void creatureAquatique() {
-        if  (this instanceof Megalodon) {
-            EnclosNageurs enclosNageurs =new EnclosNageurs("src.Enclos nageur", 10, 30, false, false);
-            EnclosNageurs.ajouterCreature(this);
-            System.out.println("Le Licorne ne vole pas et ne nage pas elle doit etre dans un enclos simple");
-        } else {
-            System.out.println("Cette créature doit etre atribuer à un autre enclos.");
-        }
     }
-    */
 }
+
+
+

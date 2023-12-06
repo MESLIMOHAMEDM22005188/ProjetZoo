@@ -205,6 +205,7 @@ public class ControleZoo {
         System.out.println("\nRetourner à l'accueil ? (Appuyez sur 'o' pour oui) : ");
         char choixRetour = scanner.next().charAt(0);
         if (choixRetour == 'o' || choixRetour == 'O') {
+
             Zoo.afficherOption();
         }
         return choixRetour;

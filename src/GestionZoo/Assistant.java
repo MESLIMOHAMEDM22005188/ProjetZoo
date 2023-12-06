@@ -77,6 +77,7 @@ public class Assistant {
                     System.out.println("Bien j'ai enregistrer vos informations !");
                     System.out.println("Maintenant vous pouvez acceder au menu principale du Jeu (Q)");
                     Zoo.afficherOption();
+
                     break;
                 default:
                     System.out.println("Choix invalide.");
