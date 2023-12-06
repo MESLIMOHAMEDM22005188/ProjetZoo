@@ -12,6 +12,7 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
     private static double tailleNaissance = 2.5;
     private static double tailleMaximum = 20;
 
+
     private List<Megalodon> enfants;
     private static List<Megalodon> adultes;
      /**

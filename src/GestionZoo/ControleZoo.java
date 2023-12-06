@@ -21,6 +21,8 @@ public class ControleZoo {
             System.out.println("Vous ne disposez d'aucun enclos.");
         }
 
+
+
         System.out.println("\nInformations sur les créatures fantastiques :");
         if (!CreatureFantastique.Creature.isEmpty()) {
             for (CreatureFantastique creature : CreatureFantastique.Creature) {

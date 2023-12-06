@@ -85,7 +85,6 @@ public class Assistant {
         } while (choixMenu != 'Q' && choixMenu != 'q');
     }
 
-
     public static boolean verifierAge(int age) {
         boolean ageValide = false;
         if (age < 18) {

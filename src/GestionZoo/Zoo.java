@@ -19,6 +19,7 @@ public class Zoo {
         this.age = age;
     }
 
+
     public static void afficherOption(){
         System.out.println("Choisissez une option : ");
         System.out.println("1. Voir ensemble du zoo");
