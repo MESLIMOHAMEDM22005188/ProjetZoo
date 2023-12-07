@@ -84,21 +84,30 @@ public abstract class CreatureFantastique {
 
     /**
      * Constructeur de la classe CreatureFantastique.
-     * @param 'nomEspece' Le nom de l'espèce de la créature.
-     * @param 'sexe' Le sexe de la créature.
-     * @param 'poids' Le poids de la créature.
-     * @param 'taille' La taille de la créature.
-     * @param 'age' L'âge de la créature.
-     * @param 'indicateurFaim L'indicateur de faim de la créature.
+     *
+     * @param 'nomEspece'         Le nom de l'espèce de la créature.
+     * @param 'sexe'              Le sexe de la créature.
+     * @param 'poids'             Le poids de la créature.
+     * @param 'taille'            La taille de la créature.
+     * @param 'age'               L'âge de la créature.
+     * @param 'indicateurFaim     L'indicateur de faim de la créature.
      * @param 'indicateurSommeil' L'indicateur de sommeil de la créature.
-     * @param 'indicateurSante' L'indicateur de santé de la créature.
+     * @param 'indicateurSante'   L'indicateur de santé de la créature.
+     * @param nomEspece
+     * @param sexe
+     * @param poids
+     * @param taille
+     * @param age
+     * @param indicateurFaim
+     * @param indicateurSommeil
+     * @param indicateurSante
      */
-    public CreatureFantastique(String nomEspece, char sexe, double v, double poids, double taille, int age, int indicateurFaim, int indicateurSommeil, int indicateurSante) {
+    public CreatureFantastique(String nomEspece, char sexe, double poids, double taille, int age, int indicateurFaim, int indicateurSommeil, int indicateurSante) {
         this.nom = nom;
-        this.sexe = sexe;
-        this.poids = poids;
-        this.taille = taille;
-        this.age = age;
+        this.sexe = this.sexe;
+        this.poids = this.poids;
+        this.taille = this.taille;
+        this.age = this.age;
         this.indicateurFaim = 100;
         this.dort = false;
         this.indicateurSante = 100;
@@ -110,7 +119,7 @@ public abstract class CreatureFantastique {
      * @param nomCreature Le nom de la nouvelle créature.
      * @return La nouvelle créature fantastique créée.
      */
-    public static CreatureFantastique creerNouvelleCreature(NomEspece especeCreature, String nomCreature) {
+    public static <NomEspece> CreatureFantastique creerNouvelleCreature(NomEspece especeCreature, String nomCreature) {
         return null;
     }
 
@@ -149,7 +158,6 @@ public abstract class CreatureFantastique {
     }
 
     // Méthode pour mettre bas pour une licorne vivipare
-    public abstract void canMettreBas();
 
     public abstract void emettreSon();
 
@@ -159,95 +167,28 @@ public abstract class CreatureFantastique {
     /**
      * Interface pour la capacité de courrir.
      */
-    public interface PeutCourrir {
-        default void peutCourrir(boolean possedeJambes) {
-            if (possedeJambes) {
-                System.out.println("La créature peut courrir !");
-            } else {
-                System.out.println("La créature ne peut pas courrir car elle n'a pas de pattes !");
-            }
-        }
-    }
 
-    /**
-     * Interface pour la capacité de nager.
-     */
-    public interface PeutNager {
-        default void peutNager(boolean possedeNageoires) {
-            if (possedeNageoires) {
-                System.out.println("La créature peut nager !");
-            } else {
-                System.out.println("La créature ne peut pas nager car elle n'a pas de nageoires !");
-            }
-        }
-    }
 
-    /**
-     * Interface pour la capacité de voler.
-     */
-    public interface PeutVoler {
-        default void peutVoler(boolean possedeAiles) {
-            if (possedeAiles) {
-                System.out.println("La créature peut voler !");
-            } else {
-                System.out.println("La créature ne peut pas voler car elle n'a pas d'ailes !");
-            }
-        }
-    }
+
+
+
     /**
      * Méthode permettant à une créature de mettant bas.
      * Vérifie si la créature est de type Vivipaire et de sexe féminin ('F').
      * Si tel est le cas, la créature peut mettre bas en appelant la méthode appropriée.
      * Sinon, un message est affiché indiquant que la créature ne peut pas mettre bas.
      */
-    public void pandre() {
-        if (this instanceof Vivipaire && sexe == 'F') {
-            Vivipaire creatureVivipaire = (Vivipaire) this;
-            creatureVivipaire.peutMettreBas();
-        } else {
-            System.out.println("Cette créature ne peut pas pandre !");
-        }
-    }
+
 
     /**
      * Méthode permettant à une créature Vivipaire de mettre bas.
      * Cette méthode est à implémenter dans les classes qui implémentent l'interface Vivipaire.
      */
-    public void mettreBas() {
-        if (this instanceof Vivipaire && sexe == 'F') {
-            Vivipaire creatureVivipaire = (Vivipaire) this;
-            creatureVivipaire.peutMettreBas();
-        } else {
-            System.out.println("Cette créature ne peut pas mettre bas !");
-        }
-    }
 
-    /**
-     * Interface définissant la capacité de pandre pour une créature.
-     */
-    public interface Ovipaire {
-        /**
-         * Méthode définissant la capacité de pandre pour une créature ovipaire.
-         */
-        void canPandre();
 
-        void emettreSon();
 
-        void soigner();
-    }
 
-    public interface Vivipaire {
-        /**
-         * Méthode définissant la capacité de mettre bas pour une créature vivipaire.
-         *
-         * @return
-         */
-        boolean peutMettreBas();
 
-        void emettreSon();
-
-        void soigner();
-    }
     /**
      * Méthode permettant à la créature de s'endormir.
      * Si l'indicateur de sommeil est déjà à 1, affiche un message indiquant que la créature est déjà endormie.

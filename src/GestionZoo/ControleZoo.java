@@ -1,7 +1,6 @@
 package src.GestionZoo;
 
 import src.Creatures.CreatureFantastique;
-import src.Creatures.NomEspece;
 import src.Enclos.Enclos;
 
 import java.util.List;
@@ -201,24 +200,7 @@ public class ControleZoo {
         }
 
     }
-    public  static void creerEnclos() {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Créer un nouvel enclos :");
-
-        // Consommer la fin de la ligne après la saisie précédente
-        scanner.nextLine();
-        System.out.println("Entrez le nom du nouvel enclos :");
-        String nomEnclos = scanner.nextLine(); // Demander à l'utilisateur de saisir le nom de l'enclos
-
-        System.out.println("Entrez la superficie du nouvel enclos (en m²) :");
-        double superficieEnclos = scanner.nextDouble(); // Demander à l'utilisateur de saisir la superficie
-
-        Enclos nouvelEnclos = new Enclos(); // Créer une nouvelle instance de la classe Enclos
-        nouvelEnclos.setNomEnclos(nomEnclos); // Définir le nom de l'enclos
-        Enclos.EnclosList.add(nouvelEnclos); // Ajouter le nouvel enclos à la liste des enclos existants
-        System.out.println("Le nouvel enclos a été créé avec succès.");
-    }
 
     public static void acheterCreature(){
         Scanner scanner = new Scanner(System.in);
@@ -267,8 +249,8 @@ public class ControleZoo {
         } else {
             System.out.println("Aucun enclos n'est disponible pour ajouter une créature.");
         }
+        retourAccueil(scanner);
 
-        System.out.println("Option invalide.");
     }
     public static void supprimerEnclos(){
         Scanner scanner = new Scanner(System.in);
@@ -292,7 +274,44 @@ public class ControleZoo {
         } else {
             System.out.println("Aucun enclos n'est disponible pour la suppression.");
         }
+        retourAccueil(scanner);
+
     }
+
+
+        public static void creerEnclos() {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Créer un nouvel enclos :");
+
+            // Consommer la fin de la ligne après la saisie précédente
+            System.out.println("Choisissez le type d'enclos à créer :");
+            System.out.println("1. Enclos Aquarium");
+            System.out.println("2. Enclos Simple");
+            System.out.println("3. Enclos Voltigeur");
+
+            int choix = scanner.nextInt(); // Demander à l'utilisateur de choisir le type d'enclos
+
+            switch (choix) {
+                case 1:
+                    Creation.creerEnclosAquarium();
+                    break;
+                case 2:
+                    Creation.creerEnclosSimple();
+                    break;
+                case 3:
+                    Creation.creerEnclosVoltigeur();
+                    break;
+                default:
+                    System.out.println("Choix invalide.");
+                    break;
+            }
+            if ((choix == 'o' || choix == 'O')) {
+                creerEnclos();
+            }
+            retourAccueil(scanner);
+
+        }
 
     public static char retourAccueil(Scanner scanner) {
         System.out.println("\nRetourner à l'accueil ? (Appuyez sur 'o' pour oui) : ");
@@ -303,4 +322,5 @@ public class ControleZoo {
         }
         return choixRetour;
     }
+
 }

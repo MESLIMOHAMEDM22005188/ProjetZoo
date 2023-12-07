@@ -33,7 +33,7 @@ public class Lycanthope extends CreatureFantastique implements CreatureFantastiq
     public Lycanthope(String nomEspece, char sexe, double poids, double taille, int age,
                       int indicateurFaim, int indicateurSommeil, int indicateurSante,
                       double poidsNaissance, double poidsMaximum) {
-        super(nomEspece, sexe, poids, poids, taille, age, indicateurFaim, indicateurSommeil, indicateurSante);
+        super(nomEspece, sexe, poids, taille, age, indicateurFaim, indicateurSommeil, indicateurSante);
         this.POIDS_NAISSANCE = poidsNaissance;
         this.POIDS_MAXIMUM = poidsMaximum;
         this.enfants = new ArrayList<>();

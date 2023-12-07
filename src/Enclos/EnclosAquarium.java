@@ -2,52 +2,37 @@ package src.Enclos;
 
 import src.Creatures.CreatureFantastique;
 
-public class EnclosAquarium {
-    protected String nom;
-    protected CreatureFantastique[] occupants;
-    protected int capaciteMax;
+import java.util.ArrayList;
+import java.util.List;
+public class EnclosAquarium extends Enclos {
+    private List<CreatureFantastique> creaturesAquarium;
 
-    protected int nombreOccupants;
-
-    protected int nombreOccupantsMax = 10;
-    protected String etatProprete;
-
-    public EnclosAquarium(String nom, int capaciteMax) {
-        super();
-        this.nom = nom;
-        this.capaciteMax = capaciteMax;
-        this.occupants = new CreatureFantastique[capaciteMax];
-        this.nombreOccupants = 0; // Initialisation du compteur à zéro
-        this.etatProprete = "Propre"; // Initialisation de l'état de propreté
+    public EnclosAquarium(String nomEnclos, int capaciteMax) {
+        super(nomEnclos, capaciteMax);
+        this.creaturesAquarium = new ArrayList<>();
     }
 
-    public void afficherType() {
-
+    public void verifierProfondeur() {
+        System.out.println("Vérification de la profondeur de l'enclos aquarium en cours...");
+        // Logique pour vérifier la profondeur de l'enclos aquarium
+        System.out.println("La vérification de la profondeur est terminée.");
     }
 
-    public void nettoyerEnclos() {
-        for (CreatureFantastique occupant : occupants) {
-            if (occupant != null) {
-            }
-        }
-        this.etatProprete = "Propre"; // Mettre à jour l'état de propreté de l'enclos après le nettoyage
-        System.out.println("L'enclos " + nom + " a été nettoyé.");
+    public void verifierSanite() {
+        System.out.println("Vérification de la santé de l'enclos aquarium en cours...");
+        // Logique pour vérifier la santé de l'enclos aquarium
+        System.out.println("La vérification de la santé est terminée.");
     }
-
 
     public boolean ajouterCreature(CreatureFantastique creature) {
-        if (nombreOccupants < capaciteMax) { // Vérifier si l'enclos n'est pas plein
-            occupants[nombreOccupants] = creature;
-            nombreOccupants++;
-            System.out.printf("%s a été ajouté(e) à l'enclos %s.%n", creature.getNomEspece(), nom);
+        System.out.println("Tentative d'ajout de la créature à l'enclos aquarium...");
+        if (this.creaturesAquarium.size() < this.capaciteMax) {
+            this.creaturesAquarium.add(creature);
+            System.out.printf("%s ajouté(e) à l'enclos aquarium %s.%n", creature.getNomEspece(), this.nomEnclos);
+            return true;
         } else {
-            System.out.println("L'enclos " + nom + " est plein, impossible d'ajouter " + creature.getNomEspece() + ".");
+            System.out.println("L'enclos aquarium est plein, impossible d'ajouter la créature.");
+            return false;
         }
-        return false;
-    }
-
-    // Getter pour l'état de propreté de l'enclos
-    public String getEtatProprete() {
-        return etatProprete;
     }
 }

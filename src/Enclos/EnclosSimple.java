@@ -13,7 +13,7 @@ public abstract class EnclosSimple extends  Enclos  {
     protected String etatProprete;
 
     public EnclosSimple(String nom, int capaciteMax) {
-        super();
+        super(nom, capaciteMax);
         this.nom = nom;
         this.capaciteMax = capaciteMax;
         this.occupants = new CreatureFantastique[capaciteMax];

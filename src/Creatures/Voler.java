@@ -1,6 +1,4 @@
-package src.Creatures.TypeCreature;
-
-import src.Creatures.CreatureFantastique;
+package src.Creatures;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,20 +6,19 @@ import java.util.List;
 /**
  * Cette classe gère les espèces volantes dans le contexte des créatures fantastiques.
  */
-public class CréatureVolante {
+interface Voler {
     /**
      * Liste des espèces volantes disponibles.
      */
-    private List<String> especesVolantes;
+    List<String> especesVolantes = new ArrayList<>();
 
     /**
-     * Constructeur par défaut de la classe Vol.
-     * Initialise la liste des espèces volantes et ajoute des espèces par défaut.
+     * Initialise les espèces volantes en ajoutant des espèces par défaut à la liste.
      */
-    public CréatureVolante() {
-        especesVolantes = new ArrayList<>();
+    default void initialiserEspecesVolantes() {
+        especesVolantes.add("Dragon");
+        especesVolantes.add("Phenix");
     }
-
 
     /**
      * Vérifie si une créature peut voler en fonction de sa santé et d'autres conditions.
@@ -29,7 +26,7 @@ public class CréatureVolante {
      * @param creature La créature fantastique à évaluer pour sa capacité à voler.
      * @return Retourne vrai si la créature est en bonne santé et capable de voler, sinon faux.
      */
-    public boolean peutVoler(CreatureFantastique creature) {
+    static boolean peutVoler(CreatureFantastique creature) {
         boolean estEnBonneSante = creature.getIndicateurSante() > 0; // Vérifie la santé de la créature
 
         if (!estEnBonneSante) {
@@ -47,7 +44,7 @@ public class CréatureVolante {
      *
      * @return Liste des noms des espèces volantes.
      */
-    public List<String> getEspecesVolantes() {
+    default List<String> getEspecesVolantes() {
         return especesVolantes;
     }
 }

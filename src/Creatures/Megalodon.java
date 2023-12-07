@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * La classe Megalodon représente une créature fantastique ovipare.
  */
-public class Megalodon extends CreatureFantastique implements CreatureFantastique.Ovipaire {
+public class Megalodon extends Ovipaire implements Nager {
     private static double poidsNaissance = 2000;
     private static double poidsMaximum = 30000;
     private static double tailleNaissance = 2.5;
@@ -34,7 +34,7 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
     public Megalodon(String nomEspece, char sexe, double poids, double taille, int age,
                      int indicateurFaim, int indicateurSommeil, int indicateurSante,
                      double poidsNaissance, double poidsMaximum) {
-        super(nomEspece, sexe, poids, taille, age, indicateurFaim, indicateurSommeil, indicateurSante, indicateurSante);
+        super(nomEspece, sexe, poids, taille, age, indicateurFaim, indicateurSommeil, indicateurSante);
         this.poidsNaissance = poidsNaissance;
         this.poidsMaximum = poidsMaximum;
         this.enfants = new ArrayList<>();
@@ -76,10 +76,6 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
         System.out.println("Le Mégalodon a pondu des œufs !");
     }
 
-    @Override
-    public void canMettreBas() {
-
-    }
     /**
      * Implémentation de la méthode abstraite emettreSon de l'interface CreatureFantastique.
      */
@@ -115,6 +111,31 @@ public class Megalodon extends CreatureFantastique implements CreatureFantastiqu
     public void miseAJourEtat() {
         vieillir();
 
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void EspecesAquatiques() {
+        Nager.super.EspecesAquatiques();
+    }
+
+    /**
+     * @param creature La créature fantastique à évaluer pour sa capacité à nager.
+     * @return
+     */
+    @Override
+    public boolean peutNager(CreatureFantastique creature) {
+        return Nager.super.peutNager(creature);
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public List<String> getEspecesNageantes() {
+        return Nager.super.getEspecesNageantes();
     }
 }
 

@@ -13,18 +13,18 @@ public class Enclos {
 
     public static List<Enclos> EnclosAquarium = new ArrayList<>();
 
-    private String nomEnclos;
+    public String nomEnclos;
     private double superficie;
-    private int capaciteMax;
+    public int capaciteMax;
     private int nombreCreaturesPresentes;
     private String degreProprete;
     private int indicateurProprete;
 
     // Constructeur prenant en compte les détails de l'enclos
-    public Enclos() {
+    public Enclos(String nom, int capaciteMax) {
         this.nomEnclos = nomEnclos;
         this.superficie = superficie;
-        this.capaciteMax = capaciteMax;
+        this.capaciteMax = this.capaciteMax;
         this.nombreCreaturesPresentes = 0;
         this.degreProprete = "Propre";
         this.indicateurProprete = 100;
