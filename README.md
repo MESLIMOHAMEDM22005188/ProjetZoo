@@ -9,7 +9,7 @@
 > 📆 ***Organisation de code: Nous allons coder en utilisant les outils Github***
 > 
 
-> 🔨 ***Structure de code: Nous programmons en [POO](https://www.notion.so/POO-e69ed45db95f4964aebab385683d34a1?pvs=21) en utilisant un pattern abstract***
+> 🔨 ***Structure de code: Nous programmons en POO en utilisant un pattern abstract***
 > 
 
 > 🛠️ ***Outils: Github, Notion***
@@ -18,5 +18,45 @@
 > 💻 ***IDE: VSC, Eclipse***
 > 
 
-> 🌐 ***Systeme d’exploitation: Ubuntu, WINDOW 11***
+> 🌐 ***Systeme d’exploitation: Ubuntu, Windows ***
 >
+
+🔍📜Règles à respecter pour toute les créatures📜
+
+***Nom                                     Type***                             
+
+😃 Nom                                String
+
+♂♀ Sexe                            Boolean
+
+⚖️ Poids                               Double
+
+📏 Taille                                Double
+
+🎂âge                                   Int
+
+ 🥩indicateur de faim           Int
+
+💤indicateur de sommeil     Int
+
+💪indicateur de santé          Int
+
+🌍barre de vie                     Int
+
+### **LES CREATURES**
+
+🐺🦄🦑🧜‍♀️🦈🦅🐲🌿
+
+### **LES CATEGORIES DE CREATURES**
+
+### Capacité des créatures
+
+🍴manger
+
+🔊émettre un son
+
+💖être soigner
+
+⏰s’endormir ou se réveiller😴
+
+⌛️vieillir
