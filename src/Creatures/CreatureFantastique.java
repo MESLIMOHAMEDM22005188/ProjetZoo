@@ -164,36 +164,44 @@ public abstract class CreatureFantastique {
     public abstract void soigner();
 
 
-    /**
-     * Interface pour la capacité de courrir.
-     */
+    public interface Nager {
+
+        void initialiserEspecesNage();
+
+        void setEspecesNage();
+
+        List<String> creerNouvelleCreature(Object... args);
+
+    }
+
+    public interface Voler {
+
+        void initialiserEspecesVole();
+
+        void setEspecesVole();
+
+        List<String> creerNouvelleCreature(Object... args);
+
+    }
+
+    public interface Courrir {
+
+        /**
+         * Méthode pour initialiser les espèces normales.
+         * Cette méthode doit être implémentée dans les classes qui implémentent cette interface.
+         */
+        void initialiserEspecesCours();
+
+        /**
+         * Méthode pour définir les espèces en cours.
+         * Cette méthode doit être implémentée dans les classes qui implémentent cette interface.
+         */
+        void setEspecesCours();
+        List<String> creerNouvelleCreature(Object... args);
+
+    }
 
 
-
-
-
-    /**
-     * Méthode permettant à une créature de mettant bas.
-     * Vérifie si la créature est de type Vivipaire et de sexe féminin ('F').
-     * Si tel est le cas, la créature peut mettre bas en appelant la méthode appropriée.
-     * Sinon, un message est affiché indiquant que la créature ne peut pas mettre bas.
-     */
-
-
-    /**
-     * Méthode permettant à une créature Vivipaire de mettre bas.
-     * Cette méthode est à implémenter dans les classes qui implémentent l'interface Vivipaire.
-     */
-
-
-
-
-
-    /**
-     * Méthode permettant à la créature de s'endormir.
-     * Si l'indicateur de sommeil est déjà à 1, affiche un message indiquant que la créature est déjà endormie.
-     * Sinon, met l'indicateur de sommeil à 1 et affiche un message indiquant que la créature s'endort.
-     */
     public void sEndormir() {
         if (indicateurSommeil == 1) {
             System.out.println(nom + " est déjà endormi(e).");
@@ -327,6 +335,4 @@ abstract class Creatures implements ActionsCreature {
      * @param b Valeur booléenne indiquant si la créature est malade ou non.
      */
     protected abstract void setIsMalade(boolean b);
-
-
 }

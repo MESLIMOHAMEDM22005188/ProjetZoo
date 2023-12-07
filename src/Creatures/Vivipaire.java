@@ -1,6 +1,8 @@
 package src.Creatures;
 
-public class Vivipaire extends CreatureFantastique {
+import java.util.List;
+
+public abstract class Vivipaire extends CreatureFantastique {
     private boolean gestation; // Indique si la créature vivipare est en gestation
     private char sexe; // Sexe de la créature
 
@@ -17,6 +19,8 @@ public class Vivipaire extends CreatureFantastique {
         this.sexe = sexe;
         this.gestation = false; // Par défaut, la créature n'est pas en gestation
     }
+
+    public abstract void canMettreBas();
 
     // Méthode pour vérifier si la créature vivipare peut mettre bas
     public boolean peutMettreBas() {
@@ -48,4 +52,8 @@ public class Vivipaire extends CreatureFantastique {
     public void soigner() {
         System.out.println("La créature vivipare a été soignée.");
     }
+
+    public abstract List<String> getEspecesNageantes();
+
+    public abstract void setEspecesNageantes(List<String> especes);
 }

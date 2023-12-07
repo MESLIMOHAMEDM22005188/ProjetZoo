@@ -1,6 +1,7 @@
 package src.GestionZoo;
 
 import src.Creatures.CreatureFantastique;
+import src.Creatures.EspeceCreature;
 import src.Enclos.Enclos;
 
 import java.util.List;
@@ -202,32 +203,32 @@ public class ControleZoo {
     }
 
 
-    public static void acheterCreature(){
+    public static <EspeceCreature> void acheterCreature() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Acheter une nouvelle créature pour un enclos :");
-        if (!Enclos.EnclosList.isEmpty()) {
+        if (!EnclosList.isEmpty()) {
             System.out.println("Liste des enclos disponibles :");
-            for (int i = 0; i < Enclos.EnclosList.size(); i++) {
-                System.out.println((i + 1) + ". " + Enclos.EnclosList.get(i).getNom());
+            for (int i = 0; i < EnclosList.size(); i++) {
+                System.out.println((i + 1) + ". " + EnclosList.get(i).getNom());
             }
 
             System.out.println("Entrez le numéro de l'enclos dans lequel vous souhaitez ajouter une créature :");
             int choixEnclosAjoutCreature = scanner.nextInt(); // Demander à l'utilisateur de choisir l'enclos
 
-            if (choixEnclosAjoutCreature > 0 && choixEnclosAjoutCreature <= Enclos.EnclosList.size()) {
+            if (choixEnclosAjoutCreature > 0 && choixEnclosAjoutCreature <= EnclosList.size()) {
                 scanner.nextLine(); // Consommer la fin de la ligne après la saisie précédente
 
                 System.out.println("Liste des espèces disponibles :");
-                for (NomEspece espece : NomEspece.values()) {
+                for (EspeceCreature espece : EspeceCreature.values()) {
                     System.out.println(espece.ordinal() + 1 + ". " + espece.name());
                 }
 
                 System.out.println("Entrez le numéro de l'espèce de la nouvelle créature :");
                 int choixEspeceCreature = scanner.nextInt(); // Demander à l'utilisateur de choisir l'espèce de la créature
 
-                if (choixEspeceCreature > 0 && choixEspeceCreature <= NomEspece.values().length) {
-                    NomEspece especeCreature = NomEspece.values()[choixEspeceCreature - 1];
+                if (choixEspeceCreature > 0 && choixEspeceCreature <= EspeceCreature.values().length) {
+                    EspeceCreature especeCreature = EspeceCreature.values()[choixEspeceCreature - 1];
 
                     System.out.println("Entrez le nom de la nouvelle créature :");
                     scanner.nextLine(); // Consommer la fin de la ligne après la saisie précédente
@@ -237,9 +238,9 @@ public class ControleZoo {
                     CreatureFantastique nouvelleCreature = CreatureFantastique.creerNouvelleCreature(especeCreature, nomCreature);
 
                     // Ajouter la nouvelle créature à l'enclos sélectionné
-                    Enclos.EnclosList.get(choixEnclosAjoutCreature - 1).ajouterCreature(nouvelleCreature);
+                    EnclosList.get(choixEnclosAjoutCreature - 1).ajouterCreature(nouvelleCreature);
                     System.out.println("La créature a été ajoutée avec succès à l'enclos "
-                            + Enclos.EnclosList.get(choixEnclosAjoutCreature - 1).getNom() + ".");
+                            + EnclosList.get(choixEnclosAjoutCreature - 1).getNom() + ".");
                 } else {
                     System.out.println("Numéro d'espèce invalide.");
                 }
@@ -250,7 +251,6 @@ public class ControleZoo {
             System.out.println("Aucun enclos n'est disponible pour ajouter une créature.");
         }
         retourAccueil(scanner);
-
     }
     public static void supprimerEnclos(){
         Scanner scanner = new Scanner(System.in);

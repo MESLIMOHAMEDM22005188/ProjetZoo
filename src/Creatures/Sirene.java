@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Sirene extends Vivipaire implements Nager {
+public class Sirene extends Vivipaire {
     private static final double POIDS_NAISSANCE = 50.0;
     private List<Sirene> enfants;
     private static List<Sirene> adultes;

@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * La classe Lycanthope représente une créature fantastique vivipare.
  */
-public class Lycanthope extends CreatureFantastique implements CreatureFantastique.Vivipaire {
+public class Lycanthope extends Vivipaire {
     private static double POIDS_NAISSANCE = 60;
     private static double POIDS_MAXIMUM = 90;
     private static final double TAILLE_NAISSANCE = 1.70;
