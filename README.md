@@ -111,6 +111,7 @@ Le jeu commence par la création du zoo :
 
 Prenez plaisir à gérer ce zoo fantastique ! 🌟🐾
 
+</br></br>
 
 #L'organisation des fichiers
 Les dossiers contenant les classes sont contenues dans le dossier /src. Nous avons ensuite les dossiers :
