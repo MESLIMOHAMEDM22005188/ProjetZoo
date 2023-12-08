@@ -91,22 +91,22 @@
 > 
 
 
-</br></br></br>
+</br></br></br></br></br>
 
 
 ## 🚧ENCLOS🚧
 
 ### **Caractéristique des enclos (à stocker dans des tableaux)**
 
-🛑 nom                int
+| **Nom**                                | **Type**     |
+|------------------------------------|----------|
+| 🛑 Nom                             | Int      |
+| 📐 Superficie                       | Double   |
+| 🔝 Nombre maximum de créature qu’il peut contenir | Int      |
+| ✅ Le nombre de créature présent   | Int      |
+| 🧼 Un degré de propreté             | String   |
 
-📐superficie         double
-
-🔝 Nombre maximum de créature qu’il peut contenir int
-
-✅ Le nombre de créature présent  int
-
-🧼un degré de propreté string
+</br></br></br>
 
 ### **Capacité d’utilisation des enclos**
 
@@ -121,6 +121,8 @@ enlever des créatures
 nourri les créature
 
 signaler quand il est sale et vide
+
+</br></br></br>
 
 ### Types d’Enclos **(different type de tableaux)**
 
@@ -140,6 +142,8 @@ signaler quand il est sale et vide
     - PROFONDEUR📏
     - SANITE💧👍
 
+</br></br></br></br></br>
+
 ## 👨MAITRE DE ZOO👩
 
 ### Caractéristique du maitre
@@ -152,6 +156,8 @@ Sexe                                      Boolean
 
 Age (qui évolue)                   Int
 
+</br></br></br>
+
 ### Capacité du maitre
 
 examiner un enclos en voyant les caractéristiques
@@ -161,6 +167,8 @@ nettoyer un enclos
 nourrir les créatures
 
 transférer une créature d’un enclos à un autre
+
+</br></br></br></br></br>
 
 ## 🌲🐲Le ZOO FANTASTIQUE🐲🌲
 
@@ -179,6 +187,8 @@ LES ENCLOS EXISTANTS
 AFFICHER LE NOMBRE DE CREATURE PRESENTES DANS LE ZOO
 
 AFFICHER LES CREATEUR DANS TOUS LES ENCLOS.
+
+</br></br></br>
 
 ### 🎲EVENEMENT ALEATOIRE🎲
 
