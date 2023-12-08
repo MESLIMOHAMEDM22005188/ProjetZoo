@@ -4,6 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EnclosVoltigeur extends Enclos {
+    private List<CreatureFantastique> creaturesEnclosSimple;
+    public static List<String> nomsEnclosVoltigeurCrees = new ArrayList<>();
+
+    // Méthode pour ajouter un nom d'enclos à la liste
+    public static void ajouterNomEnclos(String nomEnclos) {
+        nomsEnclosVoltigeurCrees.add(nomEnclos);
+    }
+
+    // Méthode pour obtenir la liste des noms d'enclos créés
+    public static List<String> getNomsEnclosCrees() {
+        return nomsEnclosVoltigeurCrees;
+    }
     private boolean toitVerifie;
     private List<CreatureFantastique> creaturesVoltigeur;
 

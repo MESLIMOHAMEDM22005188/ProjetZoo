@@ -18,7 +18,7 @@ public class ControleZoo {
         System.out.println("\nInformations sur le zoo :");
         if (!EnclosList.isEmpty()) {
             for (Enclos enclos : EnclosList) {
-                System.out.println("- Nom de l'enclos : " + enclos.getNom());
+                System.out.println("- Nom de l'enclos : " + Enclos.getNomsEnclosCrees());
                 System.out.println("  Nombre de créatures : " + enclos.getNombreCreaturesPresentes());
             }
         } else {

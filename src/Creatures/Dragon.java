@@ -180,7 +180,7 @@ public class Dragon extends Ovipaire implements CreatureFantastique.Courrir, Cre
     @Override
     public List<String> getEspecesVolantes(){
         especesVolantes.add("Dragon");
-        return especesNageantes;
+        return especesVolantes;
     }
     /**
      * {@inheritDoc}

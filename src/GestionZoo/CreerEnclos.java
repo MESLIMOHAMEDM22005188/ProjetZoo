@@ -2,6 +2,7 @@ package src.GestionZoo;
 
 import src.Enclos.Enclos;
 import src.Enclos.EnclosAquarium;
+import src.Enclos.EnclosSimple;
 import src.Enclos.EnclosVoltigeur;
 
 import java.util.Scanner;
@@ -17,13 +18,17 @@ public class CreerEnclos {
 
         int capaciteMax = obtenirCapaciteMaximale(scanner);
 
-        EnclosVoltigeur nouvelEnclosSimple = new EnclosVoltigeur(nomEnclos, capaciteMax);
+        EnclosSimple nouvelEnclosSimple = new EnclosSimple(nomEnclos, capaciteMax) {
 
-        System.out.println("L'enclos voltigeur '" + nomEnclos + "' a été créé avec succès !");
+
+        };
+
+        System.out.println("L'enclos simple '" + nomEnclos + "' a été créé avec succès !");
         Enclos.EnclosList.add(nouvelEnclosSimple);
 
         retourCreerEnclos(scanner);
     }
+
 
     public static void creerEnclosVoltigeur() {
         Scanner scanner = new Scanner(System.in);

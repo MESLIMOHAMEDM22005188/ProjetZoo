@@ -7,6 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Enclos {
+
+    public static List<String> nomsEnclosCrees = new ArrayList<>();
+
+    // Méthode pour ajouter un nom d'enclos à la liste
+    public static void ajouterNomEnclos(String nomEnclos) {
+        nomsEnclosCrees.add(nomEnclos);
+    }
+
+    // Méthode pour obtenir la liste des noms d'enclos créés
+    public static List<String> getNomsEnclosCrees() {
+        return nomsEnclosCrees;
+    }
+
     public static List<Enclos> EnclosList = new ArrayList<>();
     public static List<Enclos> SimpleEnclosList = new ArrayList<>();
     public static List<Enclos> EnclosVoltigeur = new ArrayList<>();
@@ -30,7 +43,6 @@ public class Enclos {
         this.indicateurProprete = 100;
     }
 
-    Enclos nouvelEnclos = new Enclos(nomEnclos, capaciteMax); // Créer un nouvel enclos avec les informations saisies
     // Méthode pour définir le nom de l'enclos
     public void setNomEnclos(String nomEnclos) {
         this.nomEnclos = nomEnclos;

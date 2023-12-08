@@ -1,7 +1,23 @@
-
 package src.Enclos;
-import  src.Creatures.CreatureFantastique;
-public abstract class EnclosSimple extends  Enclos  {
+
+import src.Creatures.CreatureFantastique;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class EnclosSimple extends Enclos {
+    private List<CreatureFantastique> creaturesEnclosSimple;
+    public static List<String> nomsEnclosSimpleCrees = new ArrayList<>();
+
+    // Méthode pour ajouter un nom d'enclos à la liste
+    public static void ajouterNomEnclos(String nomEnclos) {
+        nomsEnclosSimpleCrees.add(nomEnclos);
+    }
+
+    // Méthode pour obtenir la liste des noms d'enclos créés
+    public static List<String> getNomsEnclosCrees() {
+        return nomsEnclosSimpleCrees;
+    }
 
     protected String nom;
     protected CreatureFantastique[] occupants;
@@ -20,8 +36,6 @@ public abstract class EnclosSimple extends  Enclos  {
         this.nombreOccupants = 0; // Initialisation du compteur à zéro
         this.etatProprete = "Propre"; // Initialisation de l'état de propreté
     }
-
-    public abstract void afficherType();
 
     public void nettoyerEnclos() {
         for (CreatureFantastique occupant : occupants) {

@@ -8,9 +8,6 @@ public class main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String nom;
-        String prenom;
-        int age = 0;
         Zoo zoo = null;
 
         char choix = ' ';

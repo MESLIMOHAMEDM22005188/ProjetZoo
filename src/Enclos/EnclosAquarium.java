@@ -4,9 +4,21 @@ import src.Creatures.CreatureFantastique;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class EnclosAquarium extends Enclos {
 
     private List<CreatureFantastique> creaturesAquarium;
+    public static List<String> nomsEnclosAquariumCrees = new ArrayList<>();
+
+    // Méthode pour ajouter un nom d'enclos à la liste
+    public static void ajouterNomEnclos(String nomEnclos) {
+        nomsEnclosAquariumCrees.add(nomEnclos);
+    }
+
+    // Méthode pour obtenir la liste des noms d'enclos créés
+    public static List<String> getNomsEnclosCrees() {
+        return nomsEnclosAquariumCrees;
+    }
 
     public EnclosAquarium(String nomEnclos, int capaciteMax) {
         super(nomEnclos, capaciteMax);
