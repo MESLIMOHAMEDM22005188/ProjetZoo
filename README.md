@@ -20,7 +20,7 @@ Votre mission, si vous l'acceptez, est de créer et de gérer un zoo fantastique
 6. [Événements Aléatoires](#événements-aléatoires)
 7. [Problématiques](#problématiques)
 8. [Démarrage du Jeu](#démarrage-du-jeu)
-9. [Gestion des fichiers](#L'organisation-des-fichiers)
+9. [Gestion des fichiers](#Organisation-des-fichiers)
 
 
 ## Créatures du Zoo 🐺🦄🦑🧜‍♀️🦈🦅🐲🌿
@@ -125,7 +125,7 @@ Prenez plaisir à gérer ce zoo fantastique ! 🌟🐾
 
 </br></br>
 
-# L'organisation des fichiers
+# Organisation des fichiers
 Les dossiers contenant les classes sont contenues dans le dossier /src. Nous avons ensuite les dossiers :
  - Créatures qui contient l'ensemble des classes de types de créatures ainsi qu'une classe déterminant le comportement de ces créatures.
  - Enclos qui contient les classes des différents enclos en plus de la classe gérant le comportement global de ces enclos.
