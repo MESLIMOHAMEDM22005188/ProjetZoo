@@ -7,6 +7,10 @@ import java.util.Scanner;
 import static src.Enclos.Enclos.EnclosList;
 
 public class CreerEspece {
+    /**
+     * @param enumType
+     * @param <EspeceCreature>
+     */
     public static <EspeceCreature extends Enum<EspeceCreature>> void creerCreature(Class<EspeceCreature> enumType) {
         Scanner scanner = new Scanner(System.in);
 

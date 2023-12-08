@@ -139,9 +139,4 @@ public class Zoo {
                 break;
         }
     }
-
-
-    public String getNom() {
-        return nom;
-    }
 }
