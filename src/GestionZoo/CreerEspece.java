@@ -5,7 +5,6 @@ import src.Creatures.CreatureFantastique;
 import java.util.Scanner;
 
 import static src.Enclos.Enclos.EnclosList;
-import static src.GestionZoo.ControleZoo.retourAccueil;
 
 public class CreerEspece {
     public static <EspeceCreature extends Enum<EspeceCreature>> void creerCreature(Class<EspeceCreature> enumType) {
@@ -62,16 +61,19 @@ public class CreerEspece {
             } else {
                 System.out.println("Numéro d'enclos invalide.");
             }
-        } else{
+        } else {
             System.out.println("Aucun enclos n'est disponible pour ajouter une créature.");
-            System.out.println("Voulez-vous créer un enclos ? (Tapez 'o' pour oui ou 'n' pour non)");
+            System.out.println("Voulez-vous créer un enclos ? (Tapez 'z' pour oui, 'o' pour retourner à l'accueil)");
+
             scanner.nextLine(); // Consommer la fin de la ligne précédente
-            char choix = 0;
-            if (Character.toLowerCase(choix) == 'z') { // Vérifier si l'utilisateur a entré 'o' ou 'O'
+            char choix = scanner.nextLine().toLowerCase().charAt(0); // Lire et convertir en minuscule le premier caractère de l'entrée de l'utilisateur
+
+            if (choix == 'z') {
                 ControleZoo.creerEnclos();
+            } else if (choix == 'o') {
+                ControleZoo.retourAccueil(scanner);
             } else {
-                retourAccueil(scanner);
+                System.err.println("faites un choix !");
             }
-        }
-    }
+        }}
 }

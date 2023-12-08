@@ -30,6 +30,7 @@ public class Enclos {
         this.indicateurProprete = 100;
     }
 
+    Enclos nouvelEnclos = new Enclos(nomEnclos, capaciteMax); // Créer un nouvel enclos avec les informations saisies
     // Méthode pour définir le nom de l'enclos
     public void setNomEnclos(String nomEnclos) {
         this.nomEnclos = nomEnclos;

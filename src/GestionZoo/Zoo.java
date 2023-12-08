@@ -3,15 +3,26 @@ package src.GestionZoo;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Classe représentant un Zoo.
+ */
 public class Zoo {
     private String nom;
     private int age;
     private String prenom;
 
+    /**
+     * Constructeur de la classe Zoo.
+     * @param nom Le nom du zoo.
+     * @param prenom Le prénom du responsable du zoo.
+     * @param age L'âge du responsable du zoo.
+     */
     public Zoo(String nom, String prenom, int age) {
         this.nom = nom;
     }
-
+    /**
+     * Affiche les différentes options disponibles dans le programme du zoo.
+     */
     public static void afficherOption() {
         System.out.println("Choisissez une option : ");
         System.out.println("1. Voir ensemble du zoo");
@@ -27,7 +38,11 @@ public class Zoo {
         Zoo zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
         afficherJeu(zoo, scanner);
     }
-
+    /**
+     * Affiche le jeu avec les options choisies.
+     * @param zoo Le zoo concerné.
+     * @param scanner Le scanner pour les entrées utilisateur.
+     */
     public static void afficherJeu( Zoo zoo, Scanner scanner) {
         zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
         int option = 0;
@@ -88,16 +103,19 @@ public class Zoo {
         }
     }
 
-
-
-
+    /**
+     * Affiche un récapitulatif des informations du zoo.
+     */
         public void afficherRecapitulatif() {
         System.out.println("\nRécapitulatif des informations :");
         System.out.println("Nom : " + nom);
         System.out.println("Prénom : " + prenom);
         System.out.println("Âge : " + age);
     }
-
+    /**
+     * Modifie un champ spécifique (Nom, Prénom, Âge) du profil.
+     * @param scanner Le scanner pour les entrées utilisateur.
+     */
     public void modifierChamp(Scanner scanner) {
         System.out.print("Choisissez le champ à modifier (1-Nom, 2-Prénom, 3-Âge) : ");
         int choix = scanner.nextInt();
