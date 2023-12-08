@@ -21,31 +21,39 @@
 > 🌐 ***Systeme d’exploitation: Ubuntu, Windows ***
 
 
-
+</br></br></br></br></br>
 
 
 🔍📜Règles à respecter pour toute les créatures📜
 
 ***Nom                                     Type***                             
 
-😃 Nom                                String
+> 😃 Nom                                String
+>
 
-♂♀ Sexe                            Boolean
+> ♂♀ Sexe                            Boolean
+>
 
-⚖️ Poids                               Double
+> ⚖️ Poids                               Double
+>
 
-📏 Taille                                Double
+> 📏 Taille                                Double
+>
 
-🎂âge                                   Int
+> 🎂âge                                   Int
+>
+ 
+> 🥩indicateur de faim           Int
+>
 
- 🥩indicateur de faim           Int
+> 💤indicateur de sommeil     Int
+>
 
-💤indicateur de sommeil     Int
+> 💪indicateur de santé          Int
+>
 
-💪indicateur de santé          Int
-
-🌍barre de vie                     Int
-
+> 🌍barre de vie                     Int
+>
 
 
 
