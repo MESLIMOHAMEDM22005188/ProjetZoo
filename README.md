@@ -20,7 +20,7 @@ Votre mission, si vous l'acceptez, est de créer et de gérer un zoo fantastique
 6. [Événements Aléatoires](#événements-aléatoires)
 7. [Problématiques](#problématiques)
 8. [Démarrage du Jeu](#démarrage-du-jeu)
-9. [Gestion des fichiers](#Organisation-des-fichiers)
+9. [Organisation des Fichiers](#organisation-des-fichiers)
 
 
 ## Créatures du Zoo 🐺🦄🦑🧜‍♀️🦈🦅🐲🌿
