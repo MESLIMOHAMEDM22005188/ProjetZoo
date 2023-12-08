@@ -94,14 +94,8 @@ public abstract class CreatureFantastique {
      * @param 'indicateurFaim     L'indicateur de faim de la créature.
      * @param 'indicateurSommeil' L'indicateur de sommeil de la créature.
      * @param 'indicateurSante'   L'indicateur de santé de la créature.
-     * @param nomEspece
-     * @param sexe
-     * @param poids
-     * @param taille
-     * @param age
-     * @param indicateurFaim
      */
-    public CreatureFantastique(String nomEspece, char sexe, double poids, double taille, int age, int indicateurFaim) {
+    public CreatureFantastique() {
         this.nom = nom;
         this.sexe = this.sexe;
         this.poids = this.poids;

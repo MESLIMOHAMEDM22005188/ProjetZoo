@@ -1,22 +1,18 @@
 package src.GestionZoo;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static src.GestionZoo.ControleZoo.choix;
-
 public class Zoo {
-    private static String nom;
-    private static int age;
+    private String nom;
+    private int age;
     private String prenom;
-    private static Zoo zoo;
+
     public Zoo(String nom, String prenom, int age) {
         this.nom = nom;
-        this.prenom = prenom;
-        this.age = age;
     }
 
-
-    public static void afficherOption(){
+    public static void afficherOption() {
         System.out.println("Choisissez une option : ");
         System.out.println("1. Voir ensemble du zoo");
         System.out.println("2. Voir les enclos");
@@ -28,52 +24,74 @@ public class Zoo {
         System.out.println("8. Fermer un enclos");
         System.out.println("9. Acheter une créature");
 
-        Scanner scanner = null;
-        Zoo zoo = null;
-        afficherJeu(nom, age, zoo);
-    }
-    public static void afficherJeu(String nom, int age, Zoo zoo) {
         Scanner scanner = new Scanner(System.in);
-            Zoo.zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
-            Zoo.nom = Zoo.zoo.getNom();
-            Zoo.age = Zoo.zoo.age;
-            int option = scanner.nextInt();
-            switch (option) {
-                case 1:
-                    ControleZoo.afficherInformationsZoo(Zoo.nom, Zoo.age, scanner); // Appel corrigé avec les arguments nécessaires
-                    break;
-                case 2:
-                    ControleZoo.afficherDetailEnclos(scanner); // Appel corrigé avec les arguments nécessaires
-                    break;
-                case 3:
-                    ControleZoo.ExaminerEnclos(scanner, choix);
-                    break;
-                case 4:
-                    ControleZoo.NettoyerEnclos(scanner);
-                    break;
-                case 5:
-                    ControleZoo.NourrirCreature(scanner);
-                    break;
-                case 6:
-                    ControleZoo.transfererCreature(scanner);
-                    break;
-                case 7:
-                    ControleZoo.creerEnclos();
-                    break;
-                case 8:
-                    ControleZoo.supprimerEnclos();
-                    break;
-                case 9:
-                    ControleZoo.creerCreature(ControleZoo.EspeceCreatureEnum.class);
-                    break;
-                default:
-                    System.err.println("ENTRER UNE VALEUR CORRECT");
-                    break;
-            }
-            if ((choix == 'o' || choix == 'O')) {
-                afficherOption();
+        Zoo zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
+        afficherJeu(zoo, scanner);
+    }
+
+    public static void afficherJeu( Zoo zoo, Scanner scanner) {
+        zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
+        int option = 0;
+        boolean isInvalidInput = true;
+
+        while (isInvalidInput) {
+            try {
+                System.out.print("Entrez votre choix (de 1 à 9) : ");
+                option = scanner.nextInt();
+
+                switch (option) {
+                    case 1:
+                        ControleZoo.afficherInformationsZoo(scanner);
+                        isInvalidInput = false;
+                        break;
+                    case 2:
+                        ControleZoo.afficherDetailEnclos(scanner);
+                        isInvalidInput = false;
+                        break;
+                    case 3:
+                        // La variable "choix" n'est pas définie ici
+                        ControleZoo.ExaminerEnclos(scanner, 'c'); // Remplacer 'c' par la valeur souhaitée pour "choix"
+                        isInvalidInput = false;
+                        break;
+                    case 4:
+                        ControleZoo.NettoyerEnclos(scanner);
+                        isInvalidInput = false;
+                        break;
+                    case 5:
+                        ControleZoo.NourrirCreature(scanner);
+                        isInvalidInput = false;
+                        break;
+                    case 6:
+                        ControleZoo.transfererCreature(scanner);
+                        isInvalidInput = false;
+                        break;
+                    case 7:
+                        ControleZoo.creerEnclos();
+                        isInvalidInput = false;
+                        break;
+                    case 8:
+                        ControleZoo.supprimerEnclos();
+                        isInvalidInput = false;
+                        break;
+                    case 9:
+                        ControleZoo.creerCreature(ControleZoo.EspeceCreatureEnum.class);
+                        isInvalidInput = false;
+                        break;
+                    default:
+                        System.err.println("ENTREZ UNE VALEUR CORRECT (de 1 à 9)");
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                System.err.println("ENTREZ UN CHIFFRE VALIDE (de 1 à 9)");
+                System.err.println("Entrez votre choix:");
+
+                scanner.next();
             }
         }
+    }
+
+
+
 
         public void afficherRecapitulatif() {
         System.out.println("\nRécapitulatif des informations :");

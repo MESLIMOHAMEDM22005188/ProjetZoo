@@ -13,7 +13,7 @@ public class ControleZoo {
 
     static char choix = ' '; // Déclarer la variable choix comme statique
 
-    public static void afficherInformationsZoo(String nom, int age, Scanner scanner) {
+    public static void afficherInformationsZoo(Scanner scanner) {
 
         System.out.println("\nInformations sur le zoo :");
         if (!EnclosList.isEmpty()) {

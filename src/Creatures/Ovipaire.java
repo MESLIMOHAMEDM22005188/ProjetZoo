@@ -3,7 +3,7 @@ package src.Creatures;
 
 public abstract class Ovipaire extends CreatureFantastique {
         public Ovipaire(String nomEspece, char sexe, double poids, double taille, int age, int indicateurFaim) {
-            super(nomEspece, sexe, poids, taille, age, indicateurFaim);
+            super();
             // Assurez-vous d'appeler le constructeur de la classe mère avec les paramètres appropriés
         }
 

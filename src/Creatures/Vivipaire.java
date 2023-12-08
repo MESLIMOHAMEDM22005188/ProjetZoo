@@ -13,7 +13,7 @@ public abstract class Vivipaire extends CreatureFantastique {
 
     // Autre constructeur
     public Vivipaire(String nomEspece, char sexe, double poids, double taille, int age, int indicateurFaim, int indicateurSommeil, int indicateurSante) {
-        super(nomEspece, sexe, poids, taille, age, indicateurFaim);
+        super();
         this.sexe = sexe;
         this.gestation = false; // Par défaut, la créature n'est pas en gestation
     }

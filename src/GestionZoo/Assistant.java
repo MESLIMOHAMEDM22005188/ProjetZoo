@@ -60,6 +60,7 @@ public class Assistant {
             System.out.println("M2 - Modifier le prénom");
             System.out.println("M3 - Modifier l'âge");
             System.out.println("Q - Quitter");
+            System.out.println("Maintenant vous pouvez acceder au menu principale du Jeu (Q)");
 
             choixMenu = scanner.next().charAt(0);
 
@@ -75,7 +76,6 @@ public class Assistant {
                 case 'Q':
                 case 'q':
                     System.out.println("Bien j'ai enregistrer vos informations !");
-                    System.out.println("Maintenant vous pouvez acceder au menu principale du Jeu (Q)");
                     Zoo.afficherOption();
 
                     break;
