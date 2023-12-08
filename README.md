@@ -110,3 +110,10 @@ Le jeu commence par la création du zoo :
 - Achat initial d'animaux
 
 Prenez plaisir à gérer ce zoo fantastique ! 🌟🐾
+
+
+#L'organisation des fichiers
+Les dossiers contenant les classes sont contenues dans le dossier /src. Nous avons ensuite les dossiers :
+ - Créatures qui contient l'ensemble des classes de types de créatures ainsi qu'une classe déterminant le comportement de ces créatures.
+ - Enclos qui contient les classes des différents enclos en plus de la classe gérant le comportement global de ces enclos.
+ - GestionZoo qui contient différentes classes gérant le jeu, du joueur aux évènements aléatoires.
