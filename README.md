@@ -21,7 +21,7 @@
 > 🌐 ***Systeme d’exploitation: Ubuntu, Windows ***
 
 
-</br></br></br>
+</br></br>
 
 
 🔍📜Règles à respecter pour toute les créatures📜
@@ -38,7 +38,8 @@
 | 💪 Indicateur de santé   | Int      |
 | 🌍 Barre de vie | Int      |
 
-</br></br></br>
+
+</br></br>
 
 
 ### **LES CREATURES**
@@ -68,7 +69,7 @@
 > 
 
 
-</br></br></br>
+</br></br>
 
 
 ## **LES CATEGORIES DE CREATURES**
@@ -91,7 +92,7 @@
 > 
 
 
-</br></br></br></br></br>
+</br></br></br></br>
 
 
 ## 🚧ENCLOS🚧
@@ -106,7 +107,9 @@
 | ✅ Le nombre de créature présent   | Int      |
 | 🧼 Un degré de propreté             | String   |
 
-</br></br></br>
+
+</br></br>
+
 
 ### **Capacité d’utilisation des enclos**
 
@@ -122,7 +125,9 @@ nourri les créature
 
 signaler quand il est sale et vide
 
-</br></br></br>
+
+</br></br>
+
 
 ### Types d’Enclos **(different type de tableaux)**
 
@@ -142,7 +147,9 @@ signaler quand il est sale et vide
     - PROFONDEUR📏
     - SANITE💧👍
 
-</br></br></br></br></br>
+
+</br></br></br></br>
+
 
 ## 👨MAITRE DE ZOO👩
 
@@ -156,7 +163,9 @@ Sexe                                      Boolean
 
 Age (qui évolue)                   Int
 
-</br></br></br>
+
+</br></br>
+
 
 ### Capacité du maitre
 
@@ -168,7 +177,9 @@ nourrir les créatures
 
 transférer une créature d’un enclos à un autre
 
-</br></br></br></br></br>
+
+</br></br></br></br>
+
 
 ## 🌲🐲Le ZOO FANTASTIQUE🐲🌲
 
@@ -188,7 +199,9 @@ AFFICHER LE NOMBRE DE CREATURE PRESENTES DANS LE ZOO
 
 AFFICHER LES CREATEUR DANS TOUS LES ENCLOS.
 
-</br></br></br>
+
+</br></br>
+
 
 ### 🎲EVENEMENT ALEATOIRE🎲
 
