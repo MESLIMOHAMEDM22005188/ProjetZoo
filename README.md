@@ -1,9 +1,9 @@
 # ProjetZoo 🦄🌿🐲
 
-Bienvenue dans le monde fantastique du Zoo ! Ce projet vise à créer une application de simulation où vous incarnez un Maître de Zoo gérant un lieu magique peuplé de créatures incroyables.
+Bienvenue dans votre zoo fantastique ! Ce projet vise à créer une application de simulation où vous incarnez un Maître de Zoo gérant un lieu magique peuplé de créatures incroyables.
 
 ## Objectif
-Votre mission, si vous l'acceptez, est de créer et de gérer un zoo fantastique en utilisant les outils GitHub pour l'organisation du code, et en programmant en POO avec un pattern abstrait.
+Votre mission, si vous l'acceptez, est de créer et de gérer un zoo fantastique rempli d'animaux fabuleux tels les licornes, dragons, mégalodons et bien d'autres !
 
 ### Outils et Environnement de Développement
 - Outils : GitHub, Notion
