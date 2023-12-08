@@ -82,11 +82,11 @@ Le Maître du Zoo a ses propres caractéristiques et capacités :
 | Nom                          | Type     |
 |------------------------------|----------|
 | Nom                          | String   |
-| Sexe                         | Boolean  |
 | Âge (évolue)                 | Int      |
 
 ### Capacités du Maître de Zoo
 - Examiner un enclos et ses caractéristiques
+
 - Nettoyer un enclos
 - Nourrir les créatures
 - Transférer une créature d'un enclos à un autre
