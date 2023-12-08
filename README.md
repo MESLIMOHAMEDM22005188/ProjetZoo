@@ -11,6 +11,18 @@ Votre mission, si vous l'acceptez, est de créer et de gérer un zoo fantastique
 - Système d'exploitation : Ubuntu, Windows
 
 
+## Sommaire
+
+2. [Créatures du Zoo](#créatures-du-zoo)
+3. [Enclos et Gestion](#enclos-et-gestion)
+4. [Le Maître de Zoo](#le-maître-de-zoo)
+5. [Le Zoo Fantastique](#le-zoo-fantastique)
+6. [Événements Aléatoires](#événements-aléatoires)
+7. [Problématiques](#problématiques)
+8. [Démarrage du Jeu](#démarrage-du-jeu)
+9. [Gestion des fichiers](#gestion-des-fichiers)
+
+
 ## Créatures du Zoo 🐺🦄🦑🧜‍♀️🦈🦅🐲🌿
 Voici les incroyables créatures qui peuplent votre zoo fantastique :
 
