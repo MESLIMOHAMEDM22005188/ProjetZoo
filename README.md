@@ -21,7 +21,7 @@
 > 🌐 ***Systeme d’exploitation: Ubuntu, Windows ***
 
 
-</br></br></br></br></br>
+</br></br></br>
 
 
 🔍📜Règles à respecter pour toute les créatures📜
@@ -55,33 +55,60 @@
 > 🌍barre de vie                     Int
 >
 
-
+</br></br></br>
 
 
 ### **LES CREATURES**
 
-🐺🦄🦑🧜‍♀️🦈🦅🐲🌿
+> 🐺 Les lycanthropes
+>
+
+> 🦄 Les licornes
+>
+
+> 🦑 Les krakens
+>
+
+> 🧜‍♀️ Les sirènes
+>
+
+> 🦈 Les Mégalodons
+>
+
+> 🦅 Les phénix
+>
+
+> 🐲 Les dragons
+>
+
+> 🌿 Les nymphes
+> 
 
 
-
+</br></br></br>
 
 
 ### **LES CATEGORIES DE CREATURES**
 
-### Capacité des créatures
+### Capacités des créatures
 
-🍴manger
+> 🍴manger
+> 
 
-🔊émettre un son
+> 🔊émettre un son
+> 
 
-💖être soigner
+> 💖être soigner
+> 
 
-⏰s’endormir ou se réveiller😴
+> ⏰s’endormir ou se réveiller😴
+> 
 
-⌛️vieillir
+> ⌛️vieillir
+> 
 
 
-
+</br></br></br>
 
 
 ## 🚧ENCLOS🚧
