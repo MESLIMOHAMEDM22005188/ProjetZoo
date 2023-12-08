@@ -1,21 +1,19 @@
 package src.Creatures;
 
-import java.util.List;
-
 public abstract class Vivipaire extends CreatureFantastique {
     private boolean gestation; // Indique si la créature vivipare est en gestation
     private char sexe; // Sexe de la créature
 
     // Constructeur prenant en compte le sexe de la créature
-    public Vivipaire(char sexe, String nomEspece, double poids, double taille, int age, int indicateurFaim, int indicateurSommeil, int indicateurSante) {
-        super(nomEspece, sexe, poids, taille, age, indicateurFaim, indicateurSommeil, indicateurSante);
+    public Vivipaire(String nomEspece) {
+        super();
         this.sexe = sexe;
         this.gestation = false; // Par défaut, la créature n'est pas en gestation
     }
 
     // Autre constructeur
     public Vivipaire(String nomEspece, char sexe, double poids, double taille, int age, int indicateurFaim, int indicateurSommeil, int indicateurSante) {
-        super(nomEspece, sexe, poids, taille, age, indicateurFaim, indicateurSommeil, indicateurSante);
+        super(nomEspece, sexe, poids, taille, age, indicateurFaim);
         this.sexe = sexe;
         this.gestation = false; // Par défaut, la créature n'est pas en gestation
     }
@@ -43,17 +41,5 @@ public abstract class Vivipaire extends CreatureFantastique {
         System.out.println("La gestation s'est terminée.");
     }
 
-    // Méthode pour émettre un son
-    public void emettreSon() {
-        System.out.println("La créature vivipare émet un son.");
-    }
 
-    // Méthode pour soigner la créature vivipare
-    public void soigner() {
-        System.out.println("La créature vivipare a été soignée.");
-    }
-
-    public abstract List<String> getEspecesNageantes();
-
-    public abstract void setEspecesNageantes(List<String> especes);
 }

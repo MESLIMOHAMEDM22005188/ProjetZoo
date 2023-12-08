@@ -62,8 +62,12 @@ public class Zoo {
                     break;
                 case 8:
                     ControleZoo.supprimerEnclos();
+                    break;
                 case 9:
-                    ControleZoo.acheterCreature();
+                    ControleZoo.creerCreature(ControleZoo.EspeceCreatureEnum.class);
+                    break;
+                default:
+                    System.err.println("ENTRER UNE VALEUR CORRECT");
                     break;
             }
             if ((choix == 'o' || choix == 'O')) {

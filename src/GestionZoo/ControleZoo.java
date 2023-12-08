@@ -1,7 +1,6 @@
 package src.GestionZoo;
 
 import src.Creatures.CreatureFantastique;
-import src.Creatures.EspeceCreature;
 import src.Enclos.Enclos;
 
 import java.util.List;
@@ -202,11 +201,18 @@ public class ControleZoo {
 
     }
 
-
-    public static <EspeceCreature> void acheterCreature() {
+    public static <EspeceCreature extends Enum<EspeceCreature>> void creerCreature(Class<EspeceCreature> enumType) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Acheter une nouvelle créature pour un enclos :");
+        System.out.println("Vous pouvez avoir des créatures fantastiques :");
+        System.out.println("1. Licorne");
+        System.out.println("2. Megalodon");
+        System.out.println("3. Lycanthrope");
+        System.out.println("4. Dragon");
+        System.out.println("5. Sirène");
+        System.out.println("6. Kraken");
+        System.out.println("7. Nymphes");
+
         if (!EnclosList.isEmpty()) {
             System.out.println("Liste des enclos disponibles :");
             for (int i = 0; i < EnclosList.size(); i++) {
@@ -219,16 +225,18 @@ public class ControleZoo {
             if (choixEnclosAjoutCreature > 0 && choixEnclosAjoutCreature <= EnclosList.size()) {
                 scanner.nextLine(); // Consommer la fin de la ligne après la saisie précédente
 
+                EspeceCreature[] especes = enumType.getEnumConstants();
+
                 System.out.println("Liste des espèces disponibles :");
-                for (EspeceCreature espece : EspeceCreature.values()) {
-                    System.out.println(espece.ordinal() + 1 + ". " + espece.name());
+                for (int i = 0; i < especes.length; i++) {
+                    System.out.println((i + 1) + ". " + especes[i].name());
                 }
 
                 System.out.println("Entrez le numéro de l'espèce de la nouvelle créature :");
                 int choixEspeceCreature = scanner.nextInt(); // Demander à l'utilisateur de choisir l'espèce de la créature
 
-                if (choixEspeceCreature > 0 && choixEspeceCreature <= EspeceCreature.values().length) {
-                    EspeceCreature especeCreature = EspeceCreature.values()[choixEspeceCreature - 1];
+                if (choixEspeceCreature > 0 && choixEspeceCreature <= especes.length) {
+                    EspeceCreature especeCreature = especes[choixEspeceCreature - 1];
 
                     System.out.println("Entrez le nom de la nouvelle créature :");
                     scanner.nextLine(); // Consommer la fin de la ligne après la saisie précédente
@@ -251,6 +259,11 @@ public class ControleZoo {
             System.out.println("Aucun enclos n'est disponible pour ajouter une créature.");
         }
         retourAccueil(scanner);
+    }
+    public enum EspeceCreatureEnum {
+        LICORNE,
+        DRAGON,
+        PHENIX,
     }
     public static void supprimerEnclos(){
         Scanner scanner = new Scanner(System.in);
@@ -322,5 +335,6 @@ public class ControleZoo {
         }
         return choixRetour;
     }
+
 
 }

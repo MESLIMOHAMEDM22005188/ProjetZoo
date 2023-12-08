@@ -22,6 +22,7 @@ public class main {
                 System.out.println("Veuillez appuyer sur 's' pour continuer.");
             } else {
                 Assistant.afficherLigneSuivante("\nBonjour ! Bienvenue dans votre ZOO !", scanner);
+                Assistant.afficherLigneSuivante("\n Je suis Alain votre assistant de Zoo", scanner);
                 Assistant.afficherLigneSuivante("\nJ'ai appris pour vos parents... ", scanner);
                 Assistant.afficherLigneSuivante("\nToutes mes condoléances...  ", scanner);
                 Assistant.afficherLigneSuivante("\nJe les connaissais, ils avaient beaucoup d'espoir en votre avenir.", scanner);
@@ -34,7 +35,7 @@ public class main {
 
                 age = Validateur.saisirAge(scanner);
                 Assistant.afficherMenu(scanner, zoo);
-                Zoo.afficherJeu(nom, age, zoo);
+                Zoo.afficherOption();
 
             }
         } while (!(choix == 's' || choix == 'S'));

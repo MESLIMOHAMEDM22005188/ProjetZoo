@@ -29,6 +29,7 @@ enum CategorieAge {
  */
 public abstract class CreatureFantastique {
     /**
+     *
      * Liste de créatures fantastiques.
      */
     public static List<CreatureFantastique> Creature = new ArrayList<>();
@@ -99,10 +100,8 @@ public abstract class CreatureFantastique {
      * @param taille
      * @param age
      * @param indicateurFaim
-     * @param indicateurSommeil
-     * @param indicateurSante
      */
-    public CreatureFantastique(String nomEspece, char sexe, double poids, double taille, int age, int indicateurFaim, int indicateurSommeil, int indicateurSante) {
+    public CreatureFantastique(String nomEspece, char sexe, double poids, double taille, int age, int indicateurFaim) {
         this.nom = nom;
         this.sexe = this.sexe;
         this.poids = this.poids;
@@ -113,6 +112,9 @@ public abstract class CreatureFantastique {
         this.indicateurSante = 100;
         this.indicateurSommeil = 0; // Initialise à 0 par défaut
     }
+
+
+
     /**
      * Méthode statique pour créer une nouvelle créature.
      * @param especeCreature L'espèce de la nouvelle créature.
@@ -156,50 +158,70 @@ public abstract class CreatureFantastique {
 
         return null;
     }
-
-    // Méthode pour mettre bas pour une licorne vivipare
-
     public abstract void emettreSon();
 
     public abstract void soigner();
 
 
-    public interface Nager {
 
-        void initialiserEspecesNage();
-
-        void setEspecesNage();
-
-        List<String> creerNouvelleCreature(Object... args);
-
-    }
-
-    public interface Voler {
-
-        void initialiserEspecesVole();
-
-        void setEspecesVole();
-
-        List<String> creerNouvelleCreature(Object... args);
-
-    }
+    public abstract List<String> creerNouvelleCreature(Object... args);
 
     public interface Courrir {
-
-        /**
-         * Méthode pour initialiser les espèces normales.
-         * Cette méthode doit être implémentée dans les classes qui implémentent cette interface.
-         */
-        void initialiserEspecesCours();
 
         /**
          * Méthode pour définir les espèces en cours.
          * Cette méthode doit être implémentée dans les classes qui implémentent cette interface.
          */
+
+        List<String> getEspecesCours();
         void setEspecesCours();
+
+        List<String> creerNouvelleCreature(Object... args);
+    }
+    public interface Nager {
+
+        List<String> getEspecesNageantes();
+
+        void setEspecesNageantes();
+
+        List<String> creerNouvelleCreature(Object... args);
+
+    }/**
+     * Interface représentant le cycle de vie d'une créature.
+     */
+    public interface Mortel {
+        /**
+         * Méthode pour déterminer si la créature meurt en fonction de son âge et de ses blessures.
+         *
+         * @param age             L'âge de la créature.
+         * @param indicateurSante L'indicateur de santé de la créature.
+         * @return Vrai si la créature meurt, sinon faux.
+         */
+        public boolean mourrir(int age, int indicateurSante);
+    }
+    /**
+     * Interface représentant une créature immortelle avec plusieurs stades de vie.
+     * Implémente les méthodes pour simuler la naissance et la mort de la créature.
+     */
+    public interface Imortel {
+        /**
+         * Méthode pour simuler la naissance de la créature.
+         */
+        void naissance();
+        public void mourirImo();
+        int getStade();
+    }
+    public interface Voler {
+
+        List<String> getEspecesVolantes();
+        void setEspecesVolantes();
+
+
         List<String> creerNouvelleCreature(Object... args);
 
     }
+
+
 
 
     public void sEndormir() {
