@@ -1,241 +1,112 @@
-# ProjetZoo
+# ProjetZoo 🦄🌿🐲
 
-> 📢 ***Consigne: créer une application de simulation d’un ZOO FANTASTIQUE***
-> 
+Bienvenue dans le monde fantastique du Zoo ! Ce projet vise à créer une application de simulation où vous incarnez un Maître de Zoo gérant un lieu magique peuplé de créatures incroyables.
 
-> 🎮 ***Simulation: On doit incarner un MAITRE DE ZOO qui s’occupe d’un ZOO.***
-> 
+## Objectif
+Votre mission, si vous l'acceptez, est de créer et de gérer un zoo fantastique en utilisant les outils GitHub pour l'organisation du code, et en programmant en POO avec un pattern abstrait.
 
-> 📆 ***Organisation de code: Nous allons coder en utilisant les outils Github***
-> 
-
-> 🔨 ***Structure de code: Nous programmons en POO en utilisant un pattern abstract***
-> 
-
-> 🛠️ ***Outils: Github, Notion***
-> 
-
-> 💻 ***IDE: VSC, Eclipse***
-> 
-
-> 🌐 ***Systeme d’exploitation: Ubuntu, Windows ***
+### Outils et Environnement de Développement
+- Outils : GitHub, Notion
+- IDE : VSC, Eclipse
+- Système d'exploitation : Ubuntu, Windows
 
 
-</br></br>
+## Créatures du Zoo 🐺🦄🦑🧜‍♀️🦈🦅🐲🌿
+Voici les incroyables créatures qui peuplent votre zoo fantastique :
+
+- Lycanthropes
+- Licornes
+- Krakens
+- Sirènes
+- Mégalodons
+- Phénix
+- Dragons
+- Nymphes
+
+### Règles pour toutes les créatures
+Voici les caractéristiques communes à toutes les créatures :
+
+| Nom                | Type     |
+|--------------------|----------|
+| 😃 Nom             | String   |
+| ♂♀ Sexe           | Boolean  |
+| ⚖️ Poids          | Double   |
+| 📏 Taille          | Double   |
+| 🎂 Âge             | Int      |
+| 🥩 Indicateur de faim   | Int |
+| 💤 Indicateur de sommeil | Int |
+| 💪 Indicateur de santé   | Int |
+| 🌍 Barre de vie   | Int      |
 
 
-🔍📜Règles à respecter pour toute les créatures📜
+## Enclos et Gestion
+Le zoo est divisé en enclos, chacun ayant ses caractéristiques propres :
 
-| **Nom**              | **Type**     |
-|------------------|----------|
-| 😃 Nom           | String   |
-| ♂♀ Sexe         | Boolean  |
-| ⚖️ Poids        | Double   |
-| 📏 Taille        | Double   |
-| 🎂âge           | Int      |
-| 🥩 Indicateur de faim   | Int      |
-| 💤 Indicateur de sommeil | Int      |
-| 💪 Indicateur de santé   | Int      |
-| 🌍 Barre de vie | Int      |
+### Caractéristiques des Enclos
+| Nom                             | Type   |
+|---------------------------------|--------|
+| 🛑 Nom                          | Int    |
+| 📐 Superficie                   | Double |
+| 🔝 Nombre maximum de créatures  | Int    |
+| ✅ Nombre de créatures présent  | Int    |
+| 🧼 Degré de propreté            | String |
 
+### Types d'Enclos
+- ENCLOS VOLTIGEURS 🦅🐲
+  - Dragon
+  - Phénix
+  - *Vérification toit* 🏰
 
-</br></br>
-
-
-### **LES CREATURES**
-
-> 🐺 Les lycanthropes
->
-
-> 🦄 Les licornes
->
-
-> 🦑 Les krakens
->
-
-> 🧜‍♀️ Les sirènes
->
-
-> 🦈 Les Mégalodons
->
-
-> 🦅 Les phénix
->
-
-> 🐲 Les dragons
->
-
-> 🌿 Les nymphes
-> 
-
-
-</br></br>
-
-
-## **LES CATEGORIES DE CREATURES**
-
-### Capacités des créatures
-
-> 🍴manger
-> 
-
-> 🔊émettre un son
-> 
-
-> 💖être soigner
-> 
-
-> ⏰s’endormir ou se réveiller😴
-> 
-
-> ⌛️vieillir
-> 
-
-
-</br></br></br></br>
-
-
-## 🚧ENCLOS🚧
-
-### **Caractéristique des enclos (à stocker dans des tableaux)**
-
-| **Nom**                                | **Type**     |
-|------------------------------------|----------|
-| 🛑 Nom                             | Int      |
-| 📐 Superficie                       | Double   |
-| 🔝 Nombre maximum de créature qu’il peut contenir | Int      |
-| ✅ Le nombre de créature présent   | Int      |
-| 🧼 Un degré de propreté             | String   |
-
-
-</br></br>
-
-
-### **Capacité d’utilisation des enclos**
-
-afficher ses caractéristiques  
-
-caractéristiques des créatures qu’il contient;
-
-ajouter des créatures
-
-enlever des créatures
-
-nourri les créature
-
-signaler quand il est sale et vide
-
-
-</br></br>
-
-
-### Types d’Enclos **(different type de tableaux)**
-
-- ENCLOS VOLTIGEURS🦅🐲
-    
-    Dragon Phenix
-    
-    **⚠️ UNE VERIFICATION SUPLEMENTAIRE ⚠️**
-    
-    - VERIFICATION DU TOIT 🏰
 - ENCLOS NAGEURS 🦑🐲🧜‍♀️🦈
-    
-    lycanthropes, licornes, nymphes, sirènes
-    
-    **⚠️DEUX VERIFICATIONS SUPLEMENTAIRES⚠️**
-    
-    - PROFONDEUR📏
-    - SANITE💧👍
+  - Lycanthropes, Licornes, Nymphes, Sirènes
+  - *Vérifications supplémentaires*:
+    - Profondeur 📏
+    - Santé 💧👍
 
 
-</br></br></br></br>
+## Le Maître de Zoo 👨‍🦱👩‍🦱
+Le Maître du Zoo a ses propres caractéristiques et capacités :
+
+| Nom                          | Type     |
+|------------------------------|----------|
+| Nom                          | String   |
+| Sexe                         | Boolean  |
+| Âge (évolue)                 | Int      |
+
+### Capacités du Maître de Zoo
+- Examiner un enclos et ses caractéristiques
+- Nettoyer un enclos
+- Nourrir les créatures
+- Transférer une créature d'un enclos à un autre
 
 
-## 👨MAITRE DE ZOO👩
+## Le Zoo Fantastique 🌲🐲
+Caractéristiques du Zoo :
+- Nom
+- Maître de Zoo
+- Nombre maximal d'enclos
+- Enclos existants
 
-### Caractéristique du maitre
-
-***Nom                                     Type***                             
-
-Nom                                     String
-
-Sexe                                      Boolean
-
-Age (qui évolue)                   Int
-
-
-</br></br>
+### Capacités du Zoo
+- Afficher le nombre de créatures présentes dans le zoo
+- Afficher les créatures dans tous les enclos
 
 
-### Capacité du maitre
-
-examiner un enclos en voyant les caractéristiques
-
-nettoyer un enclos
-
-nourrir les créatures
-
-transférer une créature d’un enclos à un autre
+## Événements Aléatoires 🎲
+Des événements aléatoires surviennent :
+- Jour/Nuit
+- Évolution des animaux
+- Actions d'entretien
 
 
-</br></br></br></br>
+## Problématiques
+D'où proviennent les animaux ? Sont-ils trouvés dans la nature ou achetés ?
 
 
-## 🌲🐲Le ZOO FANTASTIQUE🐲🌲
+## Démarrage du Jeu
+Le jeu commence par la création du zoo :
+- Choix du nom du zoo
+- Renseignement du nom, sexe, et âge du Maître du Zoo
+- Achat initial d'animaux
 
-### Caractéristique du zoo
-
-NOM
-
-MAITRE DE ZOO
-
-NOMBRE MAXIMAL D’ENCLOS
-
-LES ENCLOS EXISTANTS
-
-### Capacité du zoo
-
-AFFICHER LE NOMBRE DE CREATURE PRESENTES DANS LE ZOO
-
-AFFICHER LES CREATEUR DANS TOUS LES ENCLOS.
-
-
-</br></br>
-
-
-### 🎲EVENEMENT ALEATOIRE🎲
-
-24H de vie 12h de nuit ou les animaux évoluent sans le maitre
-
-(Jour → 1/2 heure, Nuit → 1min50)
-
-Sexe de l’enfant
-
-12h d’entretien 1 action par heure.
-
-Bonjour, Veuillez choisir un nom pour votre zoo:
-
-…..
-
-Veuillez renseigner votre nom (mettre un system anti int)
-
-Veuillez renseigner votre sexe (Boolean )
-
-Veuillez renseigner votre age (en int de 18-99)
-
-Félicitation + NOM, Vous êtes maitre du  + ZOO
-
-> Problématique: d’ou pronviennent les animaux ? on les trouves dans la nature ? on les achetes ?
-> 
-
-VOUS AVEZ 20 ENCLOS DISPONIBLES ACHETEZ UN COUPLE D’ANIMAUX
-
-Acheter un 
-
-1. Licornes (nécessite 4 jours)
-2. lyncanthropes (nécessite 1 jours)
-3. dragon (nécessite 5 jours)
-4. Krakens (nécessite 2 jours)
-5. sirenes (nécessite 2 jour)
-6. mégalodons (nécessite 4 jours)
-7. phenix (nécessite 5 jours)
+Prenez plaisir à gérer ce zoo fantastique ! 🌟🐾
