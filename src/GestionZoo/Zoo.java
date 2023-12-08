@@ -73,8 +73,7 @@ public class Zoo {
                         isInvalidInput = false;
                         break;
                     case 9:
-                        //ControleZoo.creerCreature(ControleZoo.EspeceCreature.class);
-                        isInvalidInput = false;
+                        CreerEspece.creerCreature(ControleZoo.EspeceCreature.class);
                         break;
                     default:
                         System.err.println("ENTREZ UNE VALEUR CORRECT (de 1 à 9)");

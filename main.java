@@ -33,6 +33,7 @@ public class main {
                 //prenom = Validateur.saisirInfoValide("Entrez un prénom :  ", "Erreur : Veuillez entrer un prénom de plus de 3 caractères.", "Erreur : Pas de caractère spécial dans le prénom.", scanner, Assistant.estPrenomValide());
 
                 //age = Validateur.saisirAge(scanner);
+                Assistant.afficherFormulaire(scanner, zoo);
                 Assistant.afficherMenu(scanner, zoo);
                 Zoo.afficherOption();
 

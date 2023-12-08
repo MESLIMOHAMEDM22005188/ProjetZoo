@@ -1,6 +1,7 @@
 package src.GestionZoo;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Validateur {
     public static String saisirInfoValide(String message, String erreurLongueur, String erreurCaractere, Scanner scanner, Validator validator) {
@@ -16,7 +17,7 @@ public class Validateur {
                     System.out.println(erreurLongueur);
                 } else {
                     System.out.println(erreurCaractere);
-                }
+          }
             }
         } while (!valide);
         return info;
@@ -45,7 +46,9 @@ public class Validateur {
             }
         };
     }
-
+    public boolean estUniquementAlphabetique(String input) {
+        return (input != null && Pattern.matches("[a-zA-Z]+", input));
+    }
     public static Validator estNomValide() {
         return new Validator() {
             @Override

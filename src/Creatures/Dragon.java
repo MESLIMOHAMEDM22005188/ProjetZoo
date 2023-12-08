@@ -208,6 +208,7 @@ public class Dragon extends Ovipaire implements CreatureFantastique.Courrir, Cre
         especesCours = new ArrayList<>();
         especesCours.add("Dragon");
     }
+
     /**
      * {@inheritDoc}
      */
@@ -215,6 +216,9 @@ public class Dragon extends Ovipaire implements CreatureFantastique.Courrir, Cre
     public List<String> creerNouvelleCreature(Object... args) {
         return null;
     }
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void mourirImo() {
         if (this.stade < 10) {
@@ -228,6 +232,9 @@ public class Dragon extends Ovipaire implements CreatureFantastique.Courrir, Cre
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void naissance() {
         System.out.println("La créature est née !");
@@ -236,9 +243,8 @@ public class Dragon extends Ovipaire implements CreatureFantastique.Courrir, Cre
     }
 
     /**
-     *
+     * {@inheritDoc}
      */
-
     @Override
     public int getStade() {
         return this.stade;

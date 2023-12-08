@@ -50,13 +50,61 @@ public class Assistant {
         return true;
     }
 
-    public void afficherFormulaire(Scanner scanner, Zoo zoo) {
+    public static void afficherFormulaire(Scanner scanner, Zoo zoo) {
         System.out.println("Voici le formulaire");
-        System.out.println("Entrez Votre nom: ");
 
+        Validateur validateur = new Validateur();
+        String nom;
+        String prenom;
+        int age = 0;
 
+        // Saisie du nom avec validation
+        do {
+            System.out.println("Entrez votre nom : ");
+            nom = scanner.nextLine();
+
+            if (nom.length() < 3) {
+                System.out.println("Le nom doit avoir au moins 3 caractères. Veuillez réessayer.");
+            } else if (!validateur.estUniquementAlphabetique(nom)) {
+                System.out.println("Le nom ne doit contenir que des lettres. Veuillez réessayer.");
+            } else {
+                break; // Sortir de la boucle si le nom est valide
+            }
+        } while (true);
+
+        // Saisie du prénom avec validation
+        do {
+            System.out.println("Entrez votre prénom : ");
+            prenom = scanner.nextLine();
+
+            if (prenom.length() < 3) {
+                System.out.println("Le prénom doit avoir au moins 3 caractères. Veuillez réessayer.");
+            } else if (!validateur.estUniquementAlphabetique(prenom)) {
+                System.out.println("Le prénom ne doit contenir que des lettres. Veuillez réessayer.");
+            } else {
+                break; // Sortir de la boucle si le prénom est valide
+            }
+        } while (true);
+
+        // Saisie de l'âge avec validation
+        do {
+            System.out.println("Entrez votre âge : ");
+            if (scanner.hasNextInt()) {
+                age = scanner.nextInt();
+                scanner.nextLine(); // Pour consommer le saut de ligne
+
+                if (age < 18 || age > 120) {
+                    System.out.println("L'âge doit être entre 18 et 120 ans. Veuillez réessayer.");
+                } else {
+                    break; // Sortir de la boucle si l'âge est valide
+                }
+            } else {
+                System.out.println("Veuillez entrer un nombre valide pour l'âge.");
+                scanner.nextLine(); // Pour consommer la saisie invalide
+            }
+        } while (true);
+        afficherMenu(scanner, zoo);
     }
-
 
     public static void afficherMenu(Scanner scanner, Zoo zoo) {
         char choixMenu;
