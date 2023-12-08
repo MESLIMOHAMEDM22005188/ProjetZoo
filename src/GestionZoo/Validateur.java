@@ -36,7 +36,27 @@ public class Validateur {
         } while (age < 18 || age == 89 || age > 89);
         return age;
     }
+    public static Validator estPrenomValide() {
+        return new Validator() {
+            @Override
+            public boolean valider(String input) {
+                // Ajoutez ici la logique pour valider le prénom
+                return (input != null && input.matches("[a-zA-Z]+") && input.length() >= 3);
+            }
+        };
+    }
+
+    public static Validator estNomValide() {
+        return new Validator() {
+            @Override
+            public boolean valider(String input) {
+                // Ajoutez ici la logique pour valider le nom
+                return (input != null && input.matches("[a-zA-Z]+") && input.length() >= 3);
+            }
+        };
+    }
 }
+
 
 interface Validator {
     boolean valider(String input);

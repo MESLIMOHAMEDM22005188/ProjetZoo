@@ -70,6 +70,7 @@ public class Enclos {
             System.out.println("L'enclos est plein. Impossible d'ajouter une nouvelle créature.");
         }
         return false;
+
     }
 
     // Enlever une créature de l'enclos

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Interface définissant les actions disponibles pour une créature
  * @author d21218703
-  */
+ */
 interface ActionsCreature {
     void manger();
     void emettreSon();

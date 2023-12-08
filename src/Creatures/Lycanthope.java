@@ -12,6 +12,7 @@ public abstract class Lycanthope extends Vivipaire implements CreatureFantastiqu
     private static double POIDS_NAISSANCE = 60;
     private static double POIDS_MAXIMUM = 90;
     private static final double TAILLE_NAISSANCE = 1.70;
+
     private static final double TAILLE_MAXIMUM = 200;
 
     private List<Lycanthope> enfants;

@@ -14,42 +14,49 @@ public class Assistant {
         }
     }
 
-
-        public static boolean estNomValide(String nom) {
-            // Vérification de la longueur du nom
-            if (nom.length() <= 3) {
-                return false;
-            }
-
-            // Vérification des caractères spéciaux, chiffres et espaces
-            for (char c : nom.toCharArray()) {
-                if (!Character.isLetter(c)) {
-                    System.out.println("Pas de caractère spécial.");
-                    return false;
-                }
-            }
-
-            // Si toutes les conditions sont remplies, le nom est valide
-            return true;
+    public static boolean estNomValide(String nom) {
+        // Vérification de la longueur du nom
+        if (nom.length() <= 3) {
+            return false;
         }
 
-        public static boolean estPrenomValide(String prenom) {
-            // Vérification de la longueur du prénom
-            if (prenom.length() <= 3) {
+        // Vérification des caractères spéciaux, chiffres et espaces
+        for (char c : nom.toCharArray()) {
+            if (!Character.isLetter(c)) {
+                System.out.println("Pas de caractère spécial.");
                 return false;
             }
-
-            // Vérification des caractères spéciaux, chiffres et espaces
-            for (char c : prenom.toCharArray()) {
-                if (!Character.isLetter(c)) {
-                    System.out.println("Pas de caractère spécial.");
-                    return false;
-                }
-            }
-
-            // Si toutes les conditions sont remplies, le prénom est valide
-            return true;
         }
+
+        // Si toutes les conditions sont remplies, le nom est valide
+        return true;
+    }
+
+    public static boolean estPrenomValide(String prenom) {
+        // Vérification de la longueur du prénom
+        if (prenom.length() <= 3) {
+            return false;
+        }
+
+        // Vérification des caractères spéciaux, chiffres et espaces
+        for (char c : prenom.toCharArray()) {
+            if (!Character.isLetter(c)) {
+                System.out.println("Pas de caractère spécial.");
+                return false;
+            }
+        }
+
+        // Si toutes les conditions sont remplies, le prénom est valide
+        return true;
+    }
+
+    public void afficherFormulaire(Scanner scanner, Zoo zoo) {
+        System.out.println("Voici le formulaire");
+        System.out.println("Entrez Votre nom: ");
+
+
+    }
+
 
     public static void afficherMenu(Scanner scanner, Zoo zoo) {
         char choixMenu;
@@ -100,24 +107,5 @@ public class Assistant {
         }
         return ageValide;
     }
-
-        public static Validator estPrenomValide() {
-            return new Validator() {
-                @Override
-                public boolean valider(String input) {
-                    // Ajoutez ici la logique pour valider le prénom
-                    return (input != null && input.matches("[a-zA-Z]+") && input.length() >= 3);
-                }
-            };
-        }
-
-        public static Validator estNomValide() {
-            return new Validator() {
-                @Override
-                public boolean valider(String input) {
-                    // Ajoutez ici la logique pour valider le nom
-                    return (input != null && input.matches("[a-zA-Z]+") && input.length() >= 3);
-                }
-            };
-        }
 }
+

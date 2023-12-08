@@ -257,13 +257,15 @@ public class ControleZoo {
             }
         } else {
             System.out.println("Aucun enclos n'est disponible pour ajouter une créature.");
+            System.out.println("Voulez vous crée un enclos ?");
+            scanner.nextLine();
+            char R = (char) scanner.nextShort();
+            if (choix == 'o'){
+                ControleZoo.creerEnclos();
+            } else {
+                retourAccueil(scanner);
+            }
         }
-        retourAccueil(scanner);
-    }
-    public enum EspeceCreatureEnum {
-        LICORNE,
-        DRAGON,
-        PHENIX,
     }
     public static void supprimerEnclos(){
         Scanner scanner = new Scanner(System.in);
@@ -276,7 +278,7 @@ public class ControleZoo {
             }
 
             System.out.println("Entrez le numéro de l'enclos que vous souhaitez supprimer :");
-            int choixEnclosASupprimer = scanner.nextInt(); // Demander à l'utilisateur de choisir l'enclos à supprimer
+            int choixEnclosASupprimer = scanner.nextInt();
 
             if (choixEnclosASupprimer > 0 && choixEnclosASupprimer <= Enclos.EnclosList.size()) {
                 Enclos enclosASupprimer = Enclos.EnclosList.remove(choixEnclosASupprimer - 1);
@@ -307,13 +309,13 @@ public class ControleZoo {
 
             switch (choix) {
                 case 1:
-                    Creation.creerEnclosAquarium();
+                    CreerEnclos.creerEnclosAquarium();
                     break;
                 case 2:
-                    Creation.creerEnclosSimple();
+                    CreerEnclos.creerEnclosSimple();
                     break;
                 case 3:
-                    Creation.creerEnclosVoltigeur();
+                    CreerEnclos.creerEnclosVoltigeur();
                     break;
                 default:
                     System.out.println("Choix invalide.");

@@ -150,6 +150,7 @@ public class Nymphe extends Vivipaire implements CreatureFantastique.Courrir, Cr
     /**
      * {@inheritDoc}
      */
+
     @Override
     public void naissance() {
         // Actions à effectuer lors de la naissance d'une nymphe

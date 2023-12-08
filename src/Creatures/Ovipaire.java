@@ -24,6 +24,7 @@ public abstract class Ovipaire extends CreatureFantastique {
 
     }
 
+
     /**
      * Méthode définissant la capacité de pondre pour une créature ovipare.
      * Vérifie si la créature est de type Vivipaire et de sexe féminin ('F').

@@ -227,6 +227,7 @@ public class Dragon extends Ovipaire implements CreatureFantastique.Courrir, Cre
             dragons.remove(this);
         }
     }
+
     @Override
     public void naissance() {
         System.out.println("La créature est née !");

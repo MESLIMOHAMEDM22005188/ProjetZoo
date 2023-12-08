@@ -65,7 +65,6 @@ public class Kraken extends Ovipaire implements CreatureFantastique.Nager {
     public static Kraken creerKraken(String nom, char sexe, double poids, double taille, int age) {
         double poidsNaissance = 100; // Poids de naissance par défaut
         double poidsMaximum = 200; // Poids maximum par défaut
-
         if (sexe != 'M' && sexe != 'F') {
             Random rand = new Random();
             sexe = rand.nextBoolean() ? 'M' : 'F';

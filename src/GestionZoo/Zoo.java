@@ -23,7 +23,6 @@ public class Zoo {
         System.out.println("7. Créer un enclos");
         System.out.println("8. Fermer un enclos");
         System.out.println("9. Acheter une créature");
-
         Scanner scanner = new Scanner(System.in);
         Zoo zoo = new Zoo("Nom par défaut", "Prénom par défaut", 0);
         afficherJeu(zoo, scanner);
@@ -74,7 +73,7 @@ public class Zoo {
                         isInvalidInput = false;
                         break;
                     case 9:
-                        ControleZoo.creerCreature(ControleZoo.EspeceCreatureEnum.class);
+                        //ControleZoo.creerCreature(ControleZoo.EspeceCreature.class);
                         isInvalidInput = false;
                         break;
                     default:

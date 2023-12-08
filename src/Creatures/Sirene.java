@@ -173,6 +173,7 @@ public class Sirene extends Vivipaire implements CreatureFantastique.Nager, Crea
      * @param indicateurSante L'indicateur de santé de la créature.
      * @return
      */
+
     @Override
     public boolean mourrir(int age, int indicateurSante) {
         boolean tropVieille = age > 100; // Exemple : considérer qu'une créature est morte si elle dépasse l'âge de 100 ans

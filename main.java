@@ -1,5 +1,4 @@
 import src.GestionZoo.Assistant;
-import src.GestionZoo.Validateur;
 import src.GestionZoo.Zoo;
 
 import java.util.Scanner;
@@ -29,11 +28,11 @@ public class main {
                 Assistant.afficherLigneSuivante("\nVous héritez maintenant du plus grand zoo au monde construit par vos parents.", scanner);
                 Assistant.afficherLigneSuivante("\nAvant de vous donner les clés, vous devez remplir ce formulaire :", scanner);
 
-                nom = Validateur.saisirInfoValide("Entrez votre nom: ", "Erreur : Veuillez entrer un nom valable", "Erreur : Pas de caractère spécial dans le nom.", scanner, Assistant.estNomValide());
+                //nom = Validateur.saisirInfoValide("Entrez votre nom: ", "Erreur : Veuillez entrer un nom valable", "Erreur : Pas de caractère spécial dans le nom.", scanner, Assistant.estNomValide());
 
-                prenom = Validateur.saisirInfoValide("Entrez un prénom :  ", "Erreur : Veuillez entrer un prénom de plus de 3 caractères.", "Erreur : Pas de caractère spécial dans le prénom.", scanner, Assistant.estPrenomValide());
+                //prenom = Validateur.saisirInfoValide("Entrez un prénom :  ", "Erreur : Veuillez entrer un prénom de plus de 3 caractères.", "Erreur : Pas de caractère spécial dans le prénom.", scanner, Assistant.estPrenomValide());
 
-                age = Validateur.saisirAge(scanner);
+                //age = Validateur.saisirAge(scanner);
                 Assistant.afficherMenu(scanner, zoo);
                 Zoo.afficherOption();
 

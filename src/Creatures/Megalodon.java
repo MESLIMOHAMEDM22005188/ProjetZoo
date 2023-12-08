@@ -150,7 +150,6 @@ public class Megalodon extends Ovipaire implements CreatureFantastique.Nager {
         if (santeAugmentee > 100) {
             santeAugmentee = 100;
         }
-
         setIndicateurSante(santeAugmentee); // Met à jour la santé du megalodon
         System.out.println("Le megalodon a été soigné et sa santé a été augmentée !");
     }
