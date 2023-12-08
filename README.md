@@ -26,33 +26,33 @@
 
 🔍📜Règles à respecter pour toute les créatures📜
 
-***Nom                                     Type***                             
+***Nom <pre>          </pre> Type***                             
 
-> 😃 Nom                                String
+> 😃 Nom <pre>          </pre> String
 >
 
-> ♂♀ Sexe                            Boolean
+> ♂♀ Sexe <pre>          </pre> Boolean
 >
 
-> ⚖️ Poids                               Double
+> ⚖️ Poids <pre>          </pre> Double
 >
 
-> 📏 Taille                                Double
+> 📏 Taille <pre>          </pre> Double
 >
 
-> 🎂âge                                   Int
+> 🎂âge <pre>          </pre> Int
 >
  
-> 🥩indicateur de faim           Int
+> 🥩indicateur de faim <pre>          </pre> Int
 >
 
-> 💤indicateur de sommeil     Int
+> 💤indicateur de sommeil <pre>          </pre> Int
 >
 
-> 💪indicateur de santé          Int
+> 💪indicateur de santé <pre>          </pre> Int
 >
 
-> 🌍barre de vie                     Int
+> 🌍barre de vie <pre>          </pre> Int
 >
 
 </br></br></br>
@@ -88,7 +88,7 @@
 </br></br></br>
 
 
-### **LES CATEGORIES DE CREATURES**
+## **LES CATEGORIES DE CREATURES**
 
 ### Capacités des créatures
 
