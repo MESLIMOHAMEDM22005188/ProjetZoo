@@ -104,22 +104,15 @@ Caractéristiques du Zoo :
 - Afficher les créatures dans tous les enclos
 
 
-## Événements Aléatoires 🎲
-Des événements aléatoires surviennent :
-- Jour/Nuit
-- Évolution des animaux
-- Actions d'entretien
-
-
 ## Problématiques
 D'où proviennent les animaux ? Sont-ils trouvés dans la nature ou achetés ?
 
 
 ## Démarrage du Jeu
-Le jeu commence par la création du zoo :
-- Choix du nom du zoo
-- Renseignement du nom, sexe, et âge du Maître du Zoo
-- Achat initial d'animaux
+Le jeu commence à l'entrée du zoo :
+- Rencontre avec l'assistant du Zoo, Alain
+- Renseignement du prenom nom et âge du Maître du Zoo
+- Acces au menu du jeu
 
 Prenez plaisir à gérer ce zoo fantastique ! 🌟🐾
 
