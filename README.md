@@ -26,34 +26,17 @@
 
 🔍📜Règles à respecter pour toute les créatures📜
 
-***Nom / Type***                             
-
-> 😃 Nom String
->
-
-> ♂♀ Sexe Boolean
->
-
-> ⚖️ Poids Double
->
-
-> 📏 Taille Double
->
-
-> 🎂âge Int
->
- 
-> 🥩indicateur de faim Int
->
-
-> 💤indicateur de sommeil Int
->
-
-> 💪indicateur de santé Int
->
-
-> 🌍barre de vie Int
->
+| **Nom**              | **Type**     |
+|------------------|----------|
+| 😃 Nom           | String   |
+| ♂♀ Sexe         | Boolean  |
+| ⚖️ Poids        | Double   |
+| 📏 Taille        | Double   |
+| 🎂âge           | Int      |
+| 🥩 Indicateur de faim   | Int      |
+| 💤 Indicateur de sommeil | Int      |
+| 💪 Indicateur de santé   | Int      |
+| 🌍 Barre de vie | Int      |
 
 </br></br></br>
 
