@@ -26,33 +26,33 @@
 
 🔍📜Règles à respecter pour toute les créatures📜
 
-***Nom <pre>          </pre> Type***                             
+***Nom / Type***                             
 
-> 😃 Nom <pre>          </pre> String
+> 😃 Nom / String
 >
 
-> ♂♀ Sexe <pre>          </pre> Boolean
+> ♂♀ Sexe / Boolean
 >
 
-> ⚖️ Poids <pre>          </pre> Double
+> ⚖️ Poids / Double
 >
 
-> 📏 Taille <pre>          </pre> Double
+> 📏 Taille / Double
 >
 
-> 🎂âge <pre>          </pre> Int
+> 🎂âge / Int
 >
  
-> 🥩indicateur de faim <pre>          </pre> Int
+> 🥩indicateur de faim / Int
 >
 
-> 💤indicateur de sommeil <pre>          </pre> Int
+> 💤indicateur de sommeil / Int
 >
 
-> 💪indicateur de santé <pre>          </pre> Int
+> 💪indicateur de santé / Int
 >
 
-> 🌍barre de vie <pre>          </pre> Int
+> 🌍barre de vie / Int
 >
 
 </br></br></br>
