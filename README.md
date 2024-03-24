@@ -103,11 +103,6 @@ Caractéristiques du Zoo :
 - Afficher le nombre de créatures présentes dans le zoo
 - Afficher les créatures dans tous les enclos
 
-
-## Problématiques
-D'où proviennent les animaux ? Sont-ils trouvés dans la nature ou achetés ?
-
-
 ## Démarrage du Jeu
 Le jeu commence à l'entrée du zoo :
 - Rencontre avec l'assistant du Zoo, Alain
